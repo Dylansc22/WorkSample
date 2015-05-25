@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <title>Dylan's Test Map</title>
-            <h1>A Map Should Appear Here</h1>
-            <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
-            <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-            <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
-            <link href='css/style.css' rel='stylesheet' />
+        <title>Dylan's Test Map</title>
+        <h1>A Map Should Appear Here</h1>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+        <link href='css/style.css' rel='stylesheet' />
         <!--<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
         <link href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" rel="stylesheet" />-->
     </head>
     <body>
+        
+        <!-- Set the display of this container to none so we can
+        add it programmatically to `legendControl` -->
+        <div id='legend' style='display:none;'>
+            <strong>Erosion Risk Rating</strong>
+            <nav class='legend clearfix'>
+                <span style='background:#f2a72e;'></span>
+                <span style='background:#ad5313;'></span>
+                <span style='background:#6b0000;'></span>
+                <br>
+                <label>Low Risk</label>
+                <label>Moderate</label>
+                <label>High Risk</label>
+                </br>
+                <span style='background:#425320;'></span>
+                <label>Forest</label>
+                <br>
+                <small>Source: <a href="http://www.wri.org/">World Resources Insitute</a></small></br>
+            </div>
 
-        <div id='XXXXXX'></div>
-        <!--<script src="js/main.js"></script>-->
-    </body>
-    <script src="js/main.js"></script>
-</html>
+
+            <<div id='XXXXXX'></div>
+            <!--<script src="js/main.js"></script>-->
+        </body>
+        <script src="js/main.js"></script>
+    </html>
