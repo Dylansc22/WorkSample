@@ -1,41 +1,36 @@
-html,
-body {
-  margin: 0px;
-  padding: 0px;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-#XXXXXX {
-    position: absolute;
+html, body {
+    margin: 0px;
+    padding: 0px;
     top: 0px;
     bottom: 0px;
     right: 0px;
     left: 0px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#XXXXXX {
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
 }
-strong {
-  color: white;
+strong, small {
+    color: white;
 }
-
-.legend label,
-.legend span {
-  display:block;
-  float:left;
-  height:15px;
-  width:33%;
-  text-align:center;
-  font-size:10px;
-  color:white;
-  }
-
+.legend label, .legend span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 33%;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
 .map-legends.wax-legends {
-    background: rgba(30,30,30,0);
+    background: rgba(30, 30, 30, 0);
 }
