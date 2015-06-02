@@ -8,14 +8,5 @@ L.control.layers({}, {
 	'National Erosion Risk': L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'),
 }).addTo(map);
 
-var ErosionRiskNationVar = L.mapbox.featureLayer()
-    .addTo(map);
-
-// loads markers from the map `examples.map-0l53fhk2` on Mapbox,
-// if that map has markers
-featureLayer.loadID('dylanc.088863c7');
-
 map.legendControl.addLegend(document.getElementById('legend').innerHTML);
-
-
 
