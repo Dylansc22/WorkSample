@@ -10,3 +10,5 @@ L.control.layers({}, {
 
 map.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
+
+L.geoJson(ErosionRisk_Nation).addTo(map);
