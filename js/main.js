@@ -5,7 +5,7 @@ L.control.layers({}, {
     'Erosion Risk': L.mapbox.tileLayer('dylanc.ErosionRisk'),
     'Forest Conservation': L.mapbox.tileLayer('dylanc.Conservation'),
     'Forest Restoration': L.mapbox.tileLayer('dylanc.Restoration'),
-	//'National Erosion Risk': L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'),
+	'National Erosion Risk': L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'),
 }).addTo(map);
 
 map.legendControl.addLegend(document.getElementById('legend').innerHTML);
