@@ -9,9 +9,7 @@ L.control.layers({}, {
 }).addTo(map);
 
 map.legendControl.addLegend(document.getElementById('legend').innerHTML);
-
 var featLayer = L.mapbox.featureLayer().addTo(map);
-
 featLayer.loadURL('ErosionRisk_Nation.geojson');
 // inspired by http://geosprocket.github.io/btv-geographic/social/sociallayers.js 
 function getMyColor(d) {
@@ -28,7 +26,7 @@ function setStyle(feature) {
   return {
     weight: 0,
     opacity: 0,
-    fillOpacity: 0.7,
+    fillOpacity: 1,
     fillColor: getMyColor(polygon.feature.properties.MAX)
   };
 }
@@ -39,7 +37,7 @@ featLayer.on('ready', function() {
         polygon.bindPopup('This is the nation of <b>' + polygon.feature.properties.CNTRY_NAME + '</b>. and its Erosion Score is <b>' + polygon.feature.properties.MAX + '</b>');
         console.log(typeof setStyle);
         polygon.setStyle({
-            opacity: 0.55,
+            opacity: 1,
             fillOpacity: 0.55,
             fillColor: getMyColor(polygon.feature.properties.MAX),
             color: getMyColor(polygon.feature.properties.MAX)
@@ -47,5 +45,3 @@ featLayer.on('ready', function() {
     });
 });
 
-
-L.geoJson(ErosionRisk_Nation).addTo(map);
