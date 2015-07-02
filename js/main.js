@@ -11,10 +11,11 @@ var ui = document.getElementById('layerControls');
 //// https://www.mapbox.com/mapbox.js/example/v1.0.0/layers/
 
 // Define the layers for the map
-addLayer(L.mapbox.tileLayer('vanhoesenj.VTBedrock'), 'Bedrock Geology', 1);
-addLayer(L.mapbox.tileLayer('vanhoesenj.VtSurfGeo'), 'Surficial Geology', 2);
-addLayer(L.mapbox.tileLayer('landplanner.hli55fb7'), 'Soil Types', 3);
-addLayer(L.tileLayer('https://s3.amazonaws.com/geosprocket/btvgeographic/{z}/{x}/{y}.png'), 'Elevation Contours', 4);
+addLayer(L.mapbox.tileLayer('dylanc.199b68d8'), 'Hydro Facilities', 1);
+addLayer(L.mapbox.tileLayer('examples.bike-lanes'), 'DC BIKE LANES', 2);
+addLayer(L.mapbox.tileLayer('vanhoesenj.VtSurfGeo'), 'Surficial Geology', 3);
+addLayer(L.mapbox.tileLayer('landplanner.hli55fb7'), 'Soil Types', 4);
+addLayer(L.tileLayer('https://s3.amazonaws.com/geosprocket/btvgeographic/{z}/{x}/{y}.png'), 'Elevation Contours', 5);
 
 function addLayer(layer, name, zIndex) {
     layer
