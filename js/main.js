@@ -4,7 +4,49 @@ var map = L.mapbox.map('mapid', 'dylanc.61e6f75f' ).setView([40, -74.50], 4);
 
 map.addControl(L.mapbox.infoControl().addInfo('By Dylan Cobean - June 2015'));
 
-//map.addControl(L.mapbox.legendControl());
+var ui = document.getElementById('layerControls');
+
+
+//// Creates togglable layers pulled from 9884941, who pulled it from 
+//// https://www.mapbox.com/mapbox.js/example/v1.0.0/layers/
+
+// Define the layers for the map
+addLayer(L.mapbox.tileLayer('vanhoesenj.VTBedrock'), 'Bedrock Geology', 1);
+addLayer(L.mapbox.tileLayer('vanhoesenj.VtSurfGeo'), 'Surficial Geology', 2);
+addLayer(L.mapbox.tileLayer('landplanner.hli55fb7'), 'Soil Types', 3);
+addLayer(L.tileLayer('https://s3.amazonaws.com/geosprocket/btvgeographic/{z}/{x}/{y}.png'), 'Elevation Contours', 4);
+
+function addLayer(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var link = document.createElement('a');
+
+    // Define button element properties
+    link.href = '#';
+    link.className = 'btn btn-primary';
+    link.type = 'button';
+    link.innerHTML = name;
+
+    // Update map and element properties by selected layer
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = 'btn btn-primary';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active btn btn-primary';
+        }
+    };
+
+    ui.appendChild(link);
+}
+
 
 /*
 L.control.layers({}, {
