@@ -1,52 +1,55 @@
 // map refers to a ><div element with the ID XXXXXX
+//L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
+//var map = L.mapbox.map('mapid', 'dylanc.61e6f75f' ).setView([40, -74.50], 4);
+
 L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-var map = L.mapbox.map('mapid', 'dylanc.61e6f75f' ).setView([40, -74.50], 4);
+var map = L.mapbox.map('mapid').setView([38.8922,-77.0348], 14);
+var layers = document.getElementById('map-ui');
 
-map.addControl(L.mapbox.infoControl().addInfo('By Dylan Cobean - June 2015'));
-
+// Creates togglable layers pulled from 9884941, who pulled it from 
+// https://www.mapbox.com/mapbox.js/example/v1.0.0/layers/
 var ui = document.getElementById('layerControls');
-
-
-//// Creates togglable layers pulled from 9884941, who pulled it from 
-//// https://www.mapbox.com/mapbox.js/example/v1.0.0/layers/
-
 // Define the layers for the map
-addLayer(L.mapbox.tileLayer('dylanc.199b68d8'), 'Hydro Facilities', 1);
-addLayer(L.mapbox.tileLayer('examples.bike-lanes'), 'DC BIKE LANES', 2);
-addLayer(L.mapbox.tileLayer('vanhoesenj.VtSurfGeo'), 'Surficial Geology', 3);
-addLayer(L.mapbox.tileLayer('landplanner.hli55fb7'), 'Soil Types', 4);
-addLayer(L.tileLayer('https://s3.amazonaws.com/geosprocket/btvgeographic/{z}/{x}/{y}.png'), 'Elevation Contours', 5);
+addLayer(L.mapbox.tileLayer('dylanc.61e6f75f'), 'Basemap', 1);
+addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk'), 'Erosion Risk (1 KM Resolution)', 2);
+addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'), 'Erosion Risk (Nation)', 3);
+addLayer(L.mapbox.tileLayer('dylanc.HydrofacilityWatersheds'), 'Erosion Risk (Watershed)', 4);
+addLayer(L.mapbox.tileLayer('dylanc.Conservation'), 'Priority Forest Conservation', 5);
+addLayer(L.mapbox.tileLayer('dylanc.Restoration'), 'Priority Forest Restoration', 6);
 
 function addLayer(layer, name, zIndex) {
     layer
-        .setZIndex(zIndex);
-
-    // Create a simple layer switcher that toggles layers on
-    // and off.
+        .setZIndex(zIndex)
+        .addTo(map);
+    // Create a simple layer switcher that
+    // toggles layers on and off.
     var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.innerHTML = name;
 
-    // Define button element properties
-    link.href = '#';
-    link.className = 'btn btn-primary';
-    link.type = 'button';
-    link.innerHTML = name;
-
-    // Update map and element properties by selected layer
     link.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
-            this.className = 'btn btn-primary';
+            this.className = '';
         } else {
             map.addLayer(layer);
-            this.className = 'active btn btn-primary';
+            this.className = 'active';
         }
     };
 
-    ui.appendChild(link);
+    layers.appendChild(link);
 }
+
+
+map.addControl(L.mapbox.infoControl().addInfo('By Dylan Cobean - June 2015'));
+
+
+
+
 
 
 /*
@@ -58,6 +61,36 @@ L.control.layers({}, {
 }).addTo(map);
 */
 
+
+
+
+
+// THIS IS ALL FOR ADDING THE GEOJSON LAYER
+// THIS IS ALL FOR ADDING THE GEOJSON LAYER
+/* THIS IS ALL FOR ADDING THE GEOJSON LAYER
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var link = document.createElement('a');
+    // Define button element properties
+    link.href = '#';
+    link.className = 'btn btn-primary';
+    link.type = 'button';
+    link.innerHTML = name;
+    // Update map and element properties by selected layer
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = 'btn btn-primary';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active btn btn-primary';
+        }
+    };
+    ui.appendChild(link);
+}
 map.legendControl.addLegend(document.getElementById('legend').innerHTML);
 var featLayer = L.mapbox.featureLayer().addTo(map);
 featLayer.loadURL('ErosionRisk_Nation.geojson');
@@ -93,5 +126,5 @@ featLayer.on('ready', function() {
             color: getMyColor(polygon.feature.properties.MAX)
         });
     });
-});
+});*/
 
