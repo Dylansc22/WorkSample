@@ -36,20 +36,6 @@ strong, small {
 }
 
 #map-ui {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    margin: 0;
-    padding: 0;
-    z-index: 100;
-    background: #fff;
-}
-#layerControls {
-    padding: 10px;
-}
-
-# CSS For togglable layers buttons
-.layerControls {
   background:#fff;
   position:absolute;
   top:10px;right:10px;
@@ -58,7 +44,7 @@ strong, small {
   width:120px;
   border:1px solid rgba(0,0,0,0.4);
   }
-  .layerControls a {
+  .map-ui a {
     font-size:13px;
     color:#404040;
     display:block;
@@ -68,21 +54,25 @@ strong, small {
     border-bottom:1px solid rgba(0,0,0,0.25);
     text-align:center;
     }
-    .layerControls a:first-child {
+    .map-ui a:first-child {
       border-radius:3px 3px 0 0;
       }
-    .layerControls a:last-child {
+    .map-ui a:last-child {
       border:none;
       border-radius:0 0 3px 3px;
       }
-    .layerControls a:hover {
+    .map-ui a:hover {
       background:#f8f8f8;
       color:#404040;
       }
-    .layerControls a.active {
+    .map-ui a.active {
       background:#3887BE;
       color:#FFF;
       }
-      .layerControls a.active:hover {
+      .map-ui a.active:hover {
         background:#3074a4;
         }
+
+#layerControls {
+    padding: 10px;
+}

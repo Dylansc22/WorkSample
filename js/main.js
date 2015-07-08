@@ -1,21 +1,22 @@
-// map refers to a ><div element with the ID XXXXXX
-//L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-//var map = L.mapbox.map('mapid', 'dylanc.61e6f75f' ).setView([40, -74.50], 4);
-
 L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-var map = L.mapbox.map('mapid').setView([38.8922,-77.0348], 14);
+var map = L.mapbox.map('mapid', 'dylanc.61e6f75f' ).setView([40, -74.50], 4);
+
+//L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
+//var map = L.mapbox.map('mapid').setView([38.8922,-77.0348], 14);
 var layers = document.getElementById('map-ui');
 
 // Creates togglable layers pulled from 9884941, who pulled it from 
 // https://www.mapbox.com/mapbox.js/example/v1.0.0/layers/
 var ui = document.getElementById('layerControls');
 // Define the layers for the map
-addLayer(L.mapbox.tileLayer('dylanc.61e6f75f'), 'Basemap', 1);
-addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk'), 'Erosion Risk (1 KM Resolution)', 2);
-addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'), 'Erosion Risk (Nation)', 3);
+//addLayer(L.mapbox.tileLayer('dylanc.61e6f75f'), 'Basemap', 1);   <--- Basemap doesn't load up. I think It's because its a 'style' and not a 'source' in Mapbox data cloud. 
+addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk'), 'Erosion Risk (1 KM Resolution)', 3);
+addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'), 'Erosion Risk (Nation)', 2);
 addLayer(L.mapbox.tileLayer('dylanc.HydrofacilityWatersheds'), 'Erosion Risk (Watershed)', 4);
-addLayer(L.mapbox.tileLayer('dylanc.Conservation'), 'Priority Forest Conservation', 5);
-addLayer(L.mapbox.tileLayer('dylanc.Restoration'), 'Priority Forest Restoration', 6);
+addLayer(L.mapbox.tileLayer('dylanc.d39f80e6'), 'Hydro Facilities', 5);
+addLayer(L.mapbox.tileLayer('dylanc.Conservation'), 'Priority Forest Conservation', 6);
+addLayer(L.mapbox.tileLayer('dylanc.Restoration'), 'Priority Forest Restoration', 7);
+
 
 function addLayer(layer, name, zIndex) {
     layer

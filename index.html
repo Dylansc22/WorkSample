@@ -13,15 +13,9 @@
         <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
         <link href='css/style.css' rel='stylesheet' />
 
-
-        <!-- 
-        THIS IS ALL FOR ADDING THE GEOJSON LAYER
-        THIS IS ALL FOR ADDING THE GEOJSON LAYER
-        THIS IS ALL FOR ADDING THE GEOJSON LAYER -->
-        <!-- ADD LOCAL GeoJSON Erosion Risk Data 
+        <!-- ADD LOCAL GeoJSON Erosion Risk Data -->
         <script type="text/javascript" src="geojson/ErosionRisk_Nation.js"></script>
-        -->
-
+        
         <!--LEAFLET CSS & JS LIBRARIES 
         I DONT KNOW IF I CAN ADD THEM WHILE THE MAPBOX LIBRARIES ARE ALREADY ADDED... THERE MIGHT BE A CONFLICT(?) IDK
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
@@ -49,11 +43,9 @@
                 <small>Source: <a href="http://www.wri.org/">World Resources Insitute</a></small></br>
         </div> <!--div legend-->
 
-        <div id='map-ui'>
-        <div id='layerControls' class="btn-group-vertical" ></div>
-        </div>
-
         <div id='mapid'></div>
+        <nav id='map-ui' class='map-ui'></nav>
+
         <script src="js/main.js"></script>
     </body>
 </html>
