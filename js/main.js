@@ -13,7 +13,8 @@ var ui = document.getElementById('layerControls');
 addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk'), 'Erosion Risk (1 KM Resolution)', 3);
 addLayer(L.mapbox.tileLayer('dylanc.ErosionRisk_Nation'), 'Erosion Risk (Nation)', 2);
 addLayer(L.mapbox.tileLayer('dylanc.HydrofacilityWatersheds'), 'Erosion Risk (Watershed)', 4);
-addLayer(L.mapbox.tileLayer('dylanc.d39f80e6'), 'Hydro Facilities', 5);
+//addLayer(L.mapbox.tileLayer('dylanc.d39f80e6'), 'Hydro Facilities', 5);  <-- I'd like to play with this unstylized Hydro Facilities data layer, and get the CSS to work in here rather than have it prestylized from whatever I upload from Tilemill to Mapbox, but I couldn't get it to work so I have to use the pre-stylized version below.  
+addLayer(L.mapbox.tileLayer('dylanc.199b68d8'), 'Hydro Facilities', 5);
 addLayer(L.mapbox.tileLayer('dylanc.Conservation'), 'Priority Forest Conservation', 6);
 addLayer(L.mapbox.tileLayer('dylanc.Restoration'), 'Priority Forest Restoration', 7);
 
