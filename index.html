@@ -12,6 +12,8 @@
         <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
         <link href='css/style.css' rel='stylesheet' />
+        <!--AWESOME FONTS LIBRARIES (PART OF BOOTSTRAP I THINK)-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <!-- ADD LOCAL GeoJSON Erosion Risk Data 
         <script type="text/javascript" src="geojson/ErosionRisk_Nation.js"></script> -->
@@ -25,7 +27,16 @@
 
 
     <body>
-        <div id='container'>
+    <!-- not yet functional
+    <div class='nav clearfix'>  This initializes a navigation window populated by the below text/buttons 
+    <div class='nav-left ra-btn' id='btn-fdw'>  This initializes a button in the new nav window 
+      Forests & Drinking Water Button
+    </div>
+    <div class='nav-left ra-btn' id='btn-fhp'>   This initializes a button in the new nav window 
+      Forests & Hydropower Button
+    </div>
+    </div>
+        <div id='container'>-->
 
         
         <!-- Creates Navbar  /  navbar-inverse = black navbar    /     navbar-default = white navbar     /   navbar-fixed-top  OR navbar-fixed-bottom fixes navbar indep. of scroll--> 
@@ -65,13 +76,30 @@
 
         <!-- Creates Map -->
         <div id='mapid'>
-            <h1>A Map Should Appear Here. If it's not here, work on your coding dude! And make a magical map for the world to enjoy!</h1>
+            <!--<h1>A Map Should Appear Here. If it's not here, work on your coding dude! And make a magical map for the world to enjoy!</h1>-->
+
+        <div class='my-legend'>
+        <div class='legend-title'>The Title or Explanation of your Map</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#F1EEF6;'></span>0 - 20%</li>
+            <li><span style='background:#BDC9E1;'></span>40%</li>
+            <li><span style='background:#74A9CF;'></span>60%</li>
+            <li><span style='background:#2B8CBE;'></span>80%</li>
+            <li><span style='background:#045A8D;'></span>100%</li>
+          </ul>
+        </div>
+        <div class='legend-source'>Source: <a href="#link to source">Name of source</a></div>
+        </div>
+
         </div> <!-- Creates Map  -->
 
         <!-- Creates Layer Manager -->
         <nav id='map-ui' class='map-ui'></nav>
 
         </div> <!-- Container -->
+
+
 
         <script src="js/main.js"></script>
     </body>
