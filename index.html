@@ -4,26 +4,25 @@
         <title>Dylan's Test Map</title>
         <h1>A Map Should Appear Here</h1>
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <!-- BOOTSTRAP CSS & JS LIBRARIES -->
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!--  Boostrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <!-- Optional Boostrap CSS theme -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <!-- Boostrap Javascript -->
+        
         <!-- MAPBOX CSS & JS LIBRARIES -->
         <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
-        <link href='css/style.css' rel='stylesheet' />
 
-        <!-- ADD LOCAL GeoJSON Erosion Risk Data -->
-        <script type="text/javascript" src="geojson/ErosionRisk_Nation.js"></script>
+        <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
         
-        <!--EAFLET CSS & JS LIBRARIES 
-        I DONT KNOW IF I CAN ADD THEM WHILE THE MAPBOX LIBRARIES ARE ALREADY ADDED... THERE MIGHT BE A CONFLICT(?) IDK
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script> -->
+        <!-- My Local Data -->
 
-        
     </head>
+
+
     <body>
+
+
         <!-- Set the display of this container to none so we can
         add it programmatically to `legendControl` -->
         <div id='legend' style='display:none;'>
@@ -42,7 +41,31 @@
                 <br>
                 <small>Source: <a href="http://www.wri.org/">World Resources Insitute</a></small></br>
         </div> <!--div legend-->
-        <div id='XXXXXX'></div>
+        <div id='mapid'></div>
+        <div id='map-ui'>
+            <h2 style="padding:15px;">Social and Economic Patterns</h2>
+
+            <div class="btn-group-vertical" id='layerControls'>
+              <p>Select a Layer:</p>
+            </div>
+
+            <div class="btn-group" id='locationControls'>
+              <p>Zoom to:</p>
+                <a class='btn btn-info btn-xs' href='#' id="World">World View</a> 
+                <a class='btn btn-info btn-xs' href='#' id="chittenden">Chittenden</a>
+            </div>
+
+            <div class="btn-group" id='baseControls'>
+              <p>Basemap:</p>
+                <a class='btn btn-success btn-xs' href='#' id="streets"><i class='fa fa-road'></i> Streets</a> 
+                <a class='btn btn-success btn-xs' href='#' id="satellite"><i class="fa fa-globe"></i> Satellite</a>
+            </div>
+            <div class="btn-group-vertical">
+              <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
+            </div></div>
         <script src="js/main.js"></script>
+        <!-- Might want to move this to the bottom of the map to increase load speeds -->
+        <script src='data/ErosionRisk_Nation.js'></script>
+        <script src='data/HydroFacilitiesWatersheds.js'></script>
     </body>
 </html>
