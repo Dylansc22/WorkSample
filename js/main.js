@@ -1,11 +1,11 @@
 // map refers to a ><div element with the ID mapid
 var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-var map = L.map('map').setView([37.8, -96], 4);
+var map = L.map('mapid').setView([37.8, -96], 4);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
     //id: 'mapbox.light',
-    //id: 'mapbox.dark',
-    id: 'dylanc.61e6f75f',
+    id: 'mapbox.dark',
+    //id: 'dylanc.61e6f75f',
 }).addTo(map);
 
 //Set color pallet for each nation's erosion risk score

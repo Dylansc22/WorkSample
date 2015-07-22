@@ -19,6 +19,22 @@ html, body {
     right: 0px;
     left: 0px;
 }
+
+.leaflet-top-pane {
+      pointer-events: none;
+    }
+
+#map-ui {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.8);
+}
+
 strong, small {
     color: white;
 }
