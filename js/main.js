@@ -1,6 +1,7 @@
 // map refers to a ><div element with the ID mapid
 var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-var map = L.map('mapid').setView([37.8, -96], 4);
+var map = L.map('mapid', {zoomControl: false}).setView([37.8, -96], 4);
+new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
     //id: 'mapbox.light',
@@ -93,7 +94,7 @@ hfwVAR = L.geoJson(hfw, {
 }).addTo(map);
 
 //INFO ON HOVER
-var info = L.control();
+var info = L.control({position: 'bottomleft'});
 
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -200,7 +201,7 @@ document.getElementById('satellite').onclick = function() {
 document.getElementById('World').onclick = function() {
   map.setView({
     lat: 27,
-    lon: 30,
+    lon: 5,
   }, 3);
   return false;
 };
@@ -211,6 +212,8 @@ document.getElementById('chittenden').onclick = function() {
   }, 10);
   return false;
 };
+
+
 
 // map.legendControl.addLegend(document.getElementById('legend').innerHTML); 
 // Maybe I can play with the above line of code sometime

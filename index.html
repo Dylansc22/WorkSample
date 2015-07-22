@@ -3,47 +3,83 @@
     <head>
         <title>Dylan's Test Map</title>
         <h1>A Map Should Appear Here</h1>
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <!--Boostrap -->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-        
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <!-- BOOTSTRAP CSS & JS LIBRARIES -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <!-- MAPBOX CSS & JS LIBRARIES -->
         <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+        <!--AWESOME FONTS LIBRARIES (PART OF BOOTSTRAP I THINK)-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
-        
-        <!-- My Local Data -->
-
     </head>
 
 
     <body>
+        <!-- Creates Map -->
+        <div id='mapid'>
+            <!--<h1>A Map Should Appear Here. If it's not here, work on your coding dude! And make a magical map for the world to enjoy!</h1>-->
 
+        <div class='my-legend'>
+        <div class='legend-title'>The Title or Explanation of your Map</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#F1EEF6;'></span>0 - 20%</li>
+            <li><span style='background:#BDC9E1;'></span>40%</li>
+            <li><span style='background:#74A9CF;'></span>60%</li>
+            <li><span style='background:#2B8CBE;'></span>80%</li>
+            <li><span style='background:#045A8D;'></span>100%</li>
+          </ul>
+        </div>
+        <div class='legend-source'>Source: <a href="#link to source">Name of source</a></div>
+        </div>
 
-        <!-- Set the display of this container to none so we can
-        add it programmatically to `legendControl` -->
-        <div id='legend' style='display:none;'>
-            <strong>Erosion Risk Rating</strong>
-            <nav class='legend clearfix'>
-                <span style='background:#f2a72e;'></span>
-                <span style='background:#ad5313;'></span>
-                <span style='background:#6b0000;'></span>
-                <br>
-                <label>Low Risk</label>
-                <label>Moderate</label>
-                <label>High Risk</label>
-                </br>
-                <span style='background:#425320;'></span>
-                <label>Forest</label>
-                <br>
-                <small>Source: <a href="http://www.wri.org/">World Resources Insitute</a></small></br>
-        </div> <!--div legend-->
-        <div id='mapid'></div>
+        </div> <!-- Creates Map  -->
+
+        <!-- Creates Layer Manager -->
+        <nav id='map-ui' class='map-ui'></nav>
+
+        </div> <!-- Container -->
+
+        
+        <!-- Creates Navbar  /  navbar-inverse = black navbar    /     navbar-default = white navbar     /   navbar-fixed-top  OR navbar-fixed-bottom fixes navbar indep. of scroll--> 
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Full Map</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <!--li class="active"><a href="#">Basemaps</a></li-->
+                <li class="active dropdown" id="basemapList">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Basemaps <b class="caret"></b></a>
+                  <ul class="dropdown-menu" id="myDropdown">
+                    <li><a href="#">Streets</a></li>
+                    <li><a href="#">Imagery</a></li>
+                    <li><a href="#">National Geographic</a></li>
+                    <li><a href="#">Topographic</a></li>
+                    <li><a href="#">Gray</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Open Street Map</a></li>
+                  </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+        <!-- Creates Navbar -->
+
         <div id='map-ui'>
             <h2 style="padding:15px;">Social and Economic Patterns</h2>
 
@@ -65,9 +101,10 @@
             <div class="btn-group-vertical">
               <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
             </div></div>
-        <!-- Might want to move this to the bottom of the map to increase load speeds -->
-        <script src='data/ErosionRisk_Nation.js'></script>
-        <script src='data/HydroFacilitiesWatersheds.js'></script>
+
+        <!-- I think having this at the bottom increase load speeds -->
+        <script src='data/ErosionRisk_Nation.js'></script>         <!-- My Local Data -->
+        <script src='data/HydroFacilitiesWatersheds.js'></script>  <!-- My Local Data -->
         <script src="js/main.js"></script>
 
     </body>
