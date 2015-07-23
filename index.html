@@ -23,74 +23,13 @@
 
 
     <body>
-        
+        </div>
         <div id='mapid'><!-- Creates Map -->
             <!--<h1>A Map Should Appear Here. If it's not here, work on your coding dude! And make a magical map for the world to enjoy!</h1>-->
-
-        <div class='my-legend'>
-        <div class='legend-title'>The Title or Explanation of your Map</div>
-        <div class='legend-scale'>
-          <ul class='legend-labels'>
-            <li><span style='background:#F1EEF6;'></span>0 - 20%</li>
-            <li><span style='background:#BDC9E1;'></span>40%</li>
-            <li><span style='background:#74A9CF;'></span>60%</li>
-            <li><span style='background:#2B8CBE;'></span>80%</li>
-            <li><span style='background:#045A8D;'></span>100%</li>
-          </ul>
-        </div>
-        <div class='legend-source'>Source: <a href="#link to source">Name of source</a></div>
-        </div>
-
-        </div> <!-- Creates Map  -->
-
-        <!-- Creates Layer Manager -->
-        <nav id='map-ui' class='map-ui'></nav>
-
-        <div class="titlebar"><h1>Forests For Water Webmap</h1></div>
-        <!-- Creates Navbar  /  navbar-inverse = black navbar    /     navbar-default = white navbar     /   navbar-fixed-top  OR navbar-fixed-bottom fixes navbar indep. of scroll--> 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Full Map</a>
-            </div>
-            <div class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                <!--li class="active"><a href="#">Basemaps</a></li-->
-                <li class="active dropdown" id="basemapList">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Basemaps <b class="caret"></b></a>
-                  <ul class="dropdown-menu" id="myDropdown">
-                    <li><a href="#">Streets</a></li>
-                    <li><a href="#">Imagery</a></li>
-                    <li><a href="#">National Geographic</a></li>
-                    <li><a href="#">Topographic</a></li>
-                    <li><a href="#">Gray</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Open Street Map</a></li>
-                  </ul>
-                </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div>
-        </div>
-        <!-- Creates Navbar -->
-
-        <div id='zoombtn'>
-                        <div class="btn-group" id='locationControls' >
-                <a class='btn btn-info btn-xs' href='#' id="World"><i class="fa fa-globe fa-2x"></i></a> 
-            </div>
-        </div>
-
-        <div id='map-ui'>
+            <div id='map-ui'>
             <h2 style="padding:15px;">Social and Economic Patterns
             </h2>
-            <p><i class="icon-globe"></i> icon-globe</p>
+            <p><i class="fa fa-globe fa-2x"></i> icon-globe</p>
 
             <div class="btn-group-vertical" id='layerControls'>
               <p>Select a Layer:</p>
@@ -109,7 +48,14 @@
             </div>
             <div class="btn-group-vertical">
               <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
-            </div></div>
+            </div>
+            <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
+        </div>
+        </div> <!-- Creates Map  -->
+        
+        
+
+
 
         <!-- I think having this at the bottom increase load speeds -->
         <script src='data/ErosionRisk_Nation.js'></script>         <!-- My Local Data -->

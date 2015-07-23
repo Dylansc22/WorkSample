@@ -201,17 +201,18 @@ document.getElementById('satellite').onclick = function() {
 document.getElementById('World').onclick = function() {
   map.setView({
     lat: 27,
-    lon: -10,
+    lon: -15,
   }, 3);
   return false;
 };
 document.getElementById('chittenden').onclick = function() {
   map.setView({
-    lat: 44.434,
-    lon: -73.052
+    lat: 15,
+    lon: -5.052
   }, 10);
   return false;
 };
+
 
 
 
