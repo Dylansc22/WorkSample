@@ -201,7 +201,7 @@ document.getElementById('satellite').onclick = function() {
 document.getElementById('World').onclick = function() {
   map.setView({
     lat: 27,
-    lon: 5,
+    lon: -10,
   }, 3);
   return false;
 };

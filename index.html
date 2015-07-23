@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dylan's Test Map</title>
-        <h1>A Map Should Appear Here</h1>
-
+        <title>Dylan's Worksample</title>
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <!-- BOOTSTRAP CSS & JS LIBRARIES -->
+        <!-- Bootstrap Css and Js Libraries -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <!-- MAPBOX CSS & JS LIBRARIES -->
+        
+        <!-- Mapbox Css and Js Libraries-->
         <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
-        <!--AWESOME FONTS LIBRARIES (PART OF BOOTSTRAP I THINK)-->
+        
+        <!--Awesome Fonts Library-->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- Google Fonts (from https://www.google.com/fonts )-->
+        <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 
         <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
     </head>
 
 
     <body>
-        <!-- Creates Map -->
-        <div id='mapid'>
+        
+        <div id='mapid'><!-- Creates Map -->
             <!--<h1>A Map Should Appear Here. If it's not here, work on your coding dude! And make a magical map for the world to enjoy!</h1>-->
 
         <div class='my-legend'>
@@ -43,9 +46,7 @@
         <!-- Creates Layer Manager -->
         <nav id='map-ui' class='map-ui'></nav>
 
-        </div> <!-- Container -->
-
-        
+        <div class="titlebar"><h1>Forests For Water Webmap</h1></div>
         <!-- Creates Navbar  /  navbar-inverse = black navbar    /     navbar-default = white navbar     /   navbar-fixed-top  OR navbar-fixed-bottom fixes navbar indep. of scroll--> 
         <div class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
@@ -80,8 +81,16 @@
         </div>
         <!-- Creates Navbar -->
 
+        <div id='zoombtn'>
+                        <div class="btn-group" id='locationControls' >
+                <a class='btn btn-info btn-xs' href='#' id="World"><i class="fa fa-globe fa-2x"></i></a> 
+            </div>
+        </div>
+
         <div id='map-ui'>
-            <h2 style="padding:15px;">Social and Economic Patterns</h2>
+            <h2 style="padding:15px;">Social and Economic Patterns
+            </h2>
+            <p><i class="icon-globe"></i> icon-globe</p>
 
             <div class="btn-group-vertical" id='layerControls'>
               <p>Select a Layer:</p>
