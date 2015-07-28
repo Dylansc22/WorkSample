@@ -9,17 +9,8 @@ html, body {
     width: 100%;
     position: relative;
     overflow: hidden;
-    font-family: 'Fjalla One', sans-serif;
-}
-#mapid {
-    position: absolute;
-    width: 100%;
-    height: 100%
 }
 
-.leaflet-top-pane {
-      pointer-events: none;
-    }
 
 #map-ui {
   position: absolute;
@@ -35,6 +26,41 @@ html, body {
   background: rgba(255,255,255,0.3);
       font-family: 'Fjalla One', sans-serif;
 }
+
+#mapid {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.leaflet-container h2 {
+    font-family: :'Fjalla One', sans-serif;
+    color: white;
+    font-size: 30px;
+    line-height: 35px;  /*I think this is a hack-css coding to get my 'Dylan Cobean Work Sample' to show up nicely. There is probably a more proper fix than playing with 'line-height'*/
+}
+
+.leaflet-container a {
+  color: #A5A5A5;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #000000;
+  border-color: #666666;
+}
+
+.info.leaflet-control h2 {
+    color: white;
+}
+
+
+.leaflet-top-pane {
+      pointer-events: none;
+    }
+
 
 .legend label, .legend span {
     display: block;
@@ -64,13 +90,14 @@ html, body {
     height:100px;
     width: 200px;
     padding-left: 5px;
-    padding-top: 50px;
+    padding-top: 5px;
     margin-bottom: 20px;
     font: 14px/16px Arial, Helvetica, sans-serif;
-    background: white;
+    background: black;
     background: rgba(255,255,255,0.8);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
+    border-color: gray;
 }
 .info h4 {
     margin: 0 0 5px;

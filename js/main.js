@@ -1,13 +1,16 @@
-// map refers to a ><div element with the ID mapid
+// This webmap refers to a div element with the ID: 'mapid'
 var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-var map = L.map('mapid', {zoomControl: false}).setView([37.8, -96], 4);
-new L.Control.Zoom({ position: 'topright' }).addTo(map);
+var map = L.map('mapid', {zoomControl: false, minZoom:3, }).setView([27, -15], 3); //set initial view to entire world view
+new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
-    //id: 'mapbox.light',
+    //id: 'mapbox.light',   << alternative map baselayer
     id: 'mapbox.dark',
-    //id: 'dylanc.61e6f75f',
+    //id: 'dylanc.61e6f75f', < 2nd alternative map baselayer
 }).addTo(map);
+
+
+
 
 //Set color pallet for each nation's erosion risk score
 function getMyColor(d) {   
@@ -19,6 +22,9 @@ function getMyColor(d) {
         d > 1 ? '#fce96d' : 
         '#ffff80';
 }
+
+
+
 //Sets the default style of the geojson layer, by calling upon the getMyColor function. The color is based upon the MAX field of geojson. 
 function setStyle(feature) {
   return {
@@ -31,11 +37,13 @@ function setStyle(feature) {
   };
 }
 
+
+
+
 //HIGHLIGHT ON HOVER
 //Add highlighted style on mouse hover. 
 function highlightFeature(e) {
     var layer = e.target;
-
     layer.setStyle({
         weight: 2,
         opacity: 1,
@@ -44,21 +52,19 @@ function highlightFeature(e) {
         fillOpacity: 0.7,
         //fillColor: 'red'
     });
-
     if (!L.Browser.ie && !L.Browser.opera) {
         layer.bringToFront();
     }
-
     info.update(layer.feature.properties); //Part of INFO ON HOVER functionality
 }//End of HIGHLIGHT ON HOVER
 
 
-//The handy geojson.resetStyle method will reset the layer style to its default state (defined by our style function). For this to work, make sure our GeoJSON layer is accessible through the geojson variable by defining it before our listeners and assigning the layer to it later:
+
+
+//Reset the layer style to its default state (defined by our style function). For this to work, make sure our GeoJSON layer is accessible through the geojson variable by defining it before our listeners and assigning the layer to it later:
 var sdfsdf; //this clearly doesn't do anything in my code even though it is needed in the tutorial. Again I think this has something to do with me having the variable declared in the ErosionRisk_Nation.js file.
-
-
 // OUR LISTENERS
-//Define what happens on mouseout. 
+//LISTENER: Define what happens on mouseout. 
 function resetHighlight(e) {
     ernationVAR.resetStyle(e.target);
     info.update(); //Part of INFO ON HOVER functionality
@@ -66,8 +72,7 @@ function resetHighlight(e) {
     hfwVAR.resetStyle(e.target);
     info.update(); //Part of INFO ON HOVER functionality
 }
-
-//ZOOM TO LAYER
+//LISTENER: Zoom to Layer
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
@@ -83,61 +88,71 @@ function onEachFeature(feature, layer) {
     });
 }
 
+
+
 ernationVAR = L.geoJson(ernation, {
     style: setStyle,
     onEachFeature: onEachFeature
 }).addTo(map);
-
 hfwVAR = L.geoJson(hfw, {
   style: setStyle,
   onEachFeature: onEachFeature
-}).addTo(map);
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+
+
+
 
 //INFO ON HOVER
 var info = L.control({position: 'bottomleft'});
-
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
     this.update();
     return this._div;
 };
-
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = /*'<h4>Global Erosion Risk Score By Nation</h4>' + */(props ?
-        '<b>' + props.CNTRY_NAME + '</b><br />' + props.MAX + ' Erosion Score<sup>2</sup>'
-        : 'Hover over a state');
+        '<b><h3>' + props.CNTRY_NAME + '</b><br /></h3>' + props.MAX + ' Erosion Score<sup>2</sup>'
+        : 'Nation/Basin Statistics Window');
 };
-
 info.addTo(map);
 //END OF INFO ON HOVER
 
 
+
+//														//
+//THIS STATIC LEGEND ISNT QUITE READY FOR PRIMETIME YET //
+//														//
+
 //CREATE STATIC LEGEND
-var legend = L.control({position: 'bottomright'});
+//var legend = L.control({position: 'bottomright'});
+//legend.onAdd = function (map) {
 
-legend.onAdd = function (map) {
+//    var div = L.DomUtil.create('div', 'info legend'),
+//        grades = [0, 1, 2, 3, 4, 5, 6, 7],
+//        labels = [];
+//
+//	  loop through our density intervals and generate a label with a colored square for each interval
+//    for (var i = 0; i < grades.length; i++) {
+//        div.innerHTML +=
+//            '<i style="background:' + getMyColor(grades[i] + 1) + '"></i> ' +
+//            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+//    }
+//
+//    return div;
+//};
+//legend.addTo(map); //END OF CREATE STATIC LEGEND
 
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 1, 2, 3, 4, 5, 6, 7],
-        labels = [];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getMyColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
 
-    return div;
-};
-
-legend.addTo(map); //END OF CREATE STATIC LEGEND
 
 // ADD LAYER CONTROLLER
 var ui = document.getElementById('layerControls');
-addLayer(ernationVAR, 'Erosion Risk by Nation', 1);
-addLayer(hfwVAR, 'Hydro Facility Watersheds', 2);
+addLayer(ernationVAR, 'Erosion Risk by Nation', 10);
+addLayer(hfwVAR, 'Hydro Facility Watersheds', 20);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Erosion Risk (1km)', 3);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 4);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 5);
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
 //addLayer(L.mapbox.tileLayer('landplanner.hm1kg9l2'), 'Building Footprints', 6);
@@ -196,6 +211,8 @@ document.getElementById('satellite').onclick = function() {
   topPane.appendChild(topLayer.getContainer());
   topLayer.setZIndex(7);
 };
+
+
 
 // SET LOCATION BOOKMARKS
 document.getElementById('World').onclick = function() {
