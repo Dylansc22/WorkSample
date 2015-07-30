@@ -1,14 +1,3 @@
-// This webmap refers to a div element with the ID: 'mapid'
-var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-var map = L.map('mapid', {zoomControl: false, minZoom:3, }).setView([27, -15], 3); //set initial view to entire world view
-new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
-    //id: 'mapbox.light',   << alternative map baselayer
-    id: 'mapbox.dark',
-    //id: 'dylanc.61e6f75f', < 2nd alternative map baselayer
-}).addTo(map);
-
 
 
 
