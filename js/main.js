@@ -82,7 +82,7 @@ function onEachFeature(feature, layer) {
 ernationVAR = L.geoJson(ernation, {
     style: setStyle,
     onEachFeature: onEachFeature
-}).addTo(map);
+})/*.addTo(map)*/;   //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
 hfwVAR = L.geoJson(hfw, {
   style: setStyle,
   onEachFeature: onEachFeature
@@ -92,7 +92,7 @@ hfwVAR = L.geoJson(hfw, {
 
 
 //INFO ON HOVER
-var info = L.control({position: 'bottomleft'});
+var info = L.control({position: 'bottomright'});
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
     this.update();
@@ -211,13 +211,14 @@ document.getElementById('World').onclick = function() {
   }, 3);
   return false;
 };
-document.getElementById('chittenden').onclick = function() {
+
+/*document.getElementById('chittenden').onclick = function() {
   map.setView({
     lat: 15,
     lon: -5.052
   }, 10);
   return false;
-};
+};*/
 
 
 

@@ -33,6 +33,11 @@ html, body {
     height: 100%
 }
 
+.leaflet-bar {
+border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
+and the globe is correctly spaced. */
+}
+
 .leaflet-container h2 {
     font-family: :'Fjalla One', sans-serif;
     color: white;
@@ -116,4 +121,9 @@ html, body {
     margin-right: 8px;
     opacity: 0.7;
 }
+
+#World {
+  color: black;
+}
+
 /*End of Part of CREATE STATIC LEGEND functionality*/
