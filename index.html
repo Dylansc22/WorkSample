@@ -19,61 +19,45 @@
         <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 
         <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
+        <!-- d3 libaries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
     </head>
-
-
-    <body>
+<body>
+<div id='container'>
+    <div id='mapid'><!-- Creates Map -->
+    <div id='map-ui'> <!--Creates Map UI-->
+        <h2 style="padding:15px;">Dylan Cobean Work Sample</h2>
+        <div class="btn-group-vertical " id='layerControls'>
+        <p>Select a Layer:</p>
         </div>
 
-        <div id='mapid'><!-- Creates Map -->
-
-
-            <div id='map-ui'> <!--Creates Map UI-->
-            <h2 style="padding:15px;">Dylan Cobean Work Sample</h2>
-            <div class="btn-group-vertical " id='layerControls'>
-              <p>Select a Layer:</p>
-            </div>
-
-            <div class="btn-group" id='baseControls' style="padding: 15px">
-              <p>Basemap:</p>
-                <a class='btn btn-success btn-xs' href='#' id="streets"><i class='fa fa-road'></i> Streets</a> 
-                <a class='btn btn-success btn-xs' href='#' id="satellite"><i class="fa fa-globe"></i> Satellite</a>
-            </div>
-            <div class="btn-group-vertical">
-              <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
-            </div>
-            <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
+        <div class="btn-group" id='baseControls' style="padding: 15px">
+        <p>Basemap:</p>
+        <a class='btn btn-success btn-xs' href='#' id="streets"><i class='fa fa-road'></i> Streets</a> 
+        <a class='btn btn-success btn-xs' href='#' id="satellite"><i class="fa fa-globe"></i> Satellite</a>
         </div>
+        <div class="btn-group-vertical">
+        <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
+        </div>
+        <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
+    </div>
 
         <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
         But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
-        <div class="leaflet-top leaflet-right">
+    <div class="leaflet-top leaflet-right">
         <div class="leaflet-control-zoom leaflet-bar leaflet-control">
         <a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a>
         <a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out">-</a>
         <!-- adds a 'globe' button that zooms to the entire extent of the globe -->
             <div class="btn-group" id='locationControls'> 
-                <a class="btn btn-default btn-xs" href="#" id="World" style="
-                                                                                width: 26px;
-                                                                                padding-left: 0px;
-                                                                                padding-right: 0px;
-                                                                                padding-top: 0px;
-                                                                                padding-bottom: 0px;
-                                                                                border-top-width: 0px;
-                                                                                margin-top: 1px;
-                                                                                border-right-width: 0px;
-                                                                                border-bottom-width: 0px;
-                                                                                border-left-width: 0px;
-"><i class="fa fa-globe fa-2x fa-align-center"></i></a>  
+                <a class="btn btn-default btn-xs" href="#" id="World"><i class="fa fa-globe fa-2x fa-align-center"></i></a>  
             </div>
         </div>
         </div>
-
-
-
         </div> <!-- End of Creates Map  -->
-        
-        
+</div> <!-- End of Container  -->
+
+
 
 
         <script>// This webmap refers to a div element with the ID: 'mapid'
@@ -90,7 +74,9 @@
         <!-- I think having this at the bottom increase load speeds -->
         <script src='data/ErosionRisk_Nation.js'></script>         <!-- My Local Data -->
         <script src='data/HydroFacilitiesWatersheds.js'></script>  <!-- My Local Data -->
-        <script src="js/main.js"></script>
+        <script src="js/main.js"></script>  
 
-    </body>
+</body>
+
+
 </html>

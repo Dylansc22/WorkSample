@@ -101,8 +101,7 @@ info.onAdd = function (map) {
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = /*'<h4>Global Erosion Risk Score By Nation</h4>' + */(props ?
-        '<b><h3>' + props.CNTRY_NAME + '</b><br /></h3>' + props.MAX + ' Erosion Score<sup>2</sup>'
-        : 'Nation/Basin Statistics Window');
+        '<div class="propsformat">Country: <h5>' + props.CNTRY_NAME + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + props.MAX + '</h6></div><br>'        : '<div class="propsformat">Country: <h5>' + '' + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + '' + '</h6></div><br>');
 };
 info.addTo(map);
 //END OF INFO ON HOVER

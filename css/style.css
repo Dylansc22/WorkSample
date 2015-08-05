@@ -1,48 +1,75 @@
 html, body {
-    margin: 0px;
-    padding: 0px;
     top: 0px;
     bottom: 0px;
     right: 0px;
     left: 0px;
+    margin: 0px;
+    padding: 0px;
     height: 100%;
     width: 100%;
+    font-size: 100%;
     position: relative;
     overflow: hidden;
+    font-family: 'Fjalla One', sans-serif;
 }
-
 
 #map-ui {
   position: absolute;
   left: 0px;
-  height: 100%;
+  height: 88%;
   width: 12%;
   padding: 10px;
-  /* margin: 10px; */
-  /* border: 3px solid white; */
+  margin: 10px; 
+  border: 2px solid gray; /*border-right: 2px solid red;*/
   /* border-radius: 10px; */
   text-align: center;
-  z-index: 100;
-  background: rgba(255,255,255,0.3);
-      font-family: 'Fjalla One', sans-serif;
-}
-
-#mapid {
-    position: absolute;
-    width: 100%;
-    height: 100%
+  z-index: 1;
+  background: rgba(0,0,0,0.3);
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .leaflet-bar {
+  color: white;
 border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
 and the globe is correctly spaced. */
 }
 
+.propsformat {
+  font-size: 20px;
+  line-height: 25px;
+  color: gray;
+  margin: 5px;
+  display: inline;
+}
+
+.leaflet-container h1 {
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 5px;
+
+}
 .leaflet-container h2 {
-    font-family: :'Fjalla One', sans-serif;
     color: white;
     font-size: 30px;
-    line-height: 35px;  /*I think this is a hack-css coding to get my 'Dylan Cobean Work Sample' to show up nicely. There is probably a more proper fix than playing with 'line-height'*/
+    line-height: 35px;
+    margin: 5px;
+}
+
+.leaflet-container h5 {
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 5px;
+    display: inline;
+
+}
+.leaflet-container h6 {
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 5px;
+    display: inline;
 }
 
 .leaflet-container a {
@@ -57,8 +84,16 @@ and the globe is correctly spaced. */
   border-color: #666666;
 }
 
-.info.leaflet-control h2 {
+.info.leaflet-control {
+    background: rgba(0,0,0,0.4);
+    font-family:'Fjalla One', sans-serif;
     color: white;
+    border: 2px solid gray;
+    height:200px;
+    width: 400px;
+    padding: 5px;
+    margin: 10px;
+    /*font: 14px/16px Arial, Helvetica, sans-serif;*/
 }
 
 
@@ -90,25 +125,6 @@ and the globe is correctly spaced. */
     background: rgba(30, 30, 30, 0);
 }
 
-/*Part of INFO ON HOVER functionality*/
-.info {
-    height:100px;
-    width: 200px;
-    padding-left: 5px;
-    padding-top: 5px;
-    margin-bottom: 20px;
-    font: 14px/16px Arial, Helvetica, sans-serif;
-    background: black;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    border-color: gray;
-}
-.info h4 {
-    margin: 0 0 5px;
-    color: #777;
-} /*End of Part of INFO ON HOVER functionality*/
-
 /*Part of CREATE STATIC LEGEND functionality*/
 .legend {
     line-height: 18px;
@@ -123,7 +139,119 @@ and the globe is correctly spaced. */
 }
 
 #World {
-  color: black;
+    color: black;
+    width: 26px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top-width: 0px;
+    margin-top: 1px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-color: black;
 }
 
 /*End of Part of CREATE STATIC LEGEND functionality*/
+
+#ra-container {
+  transition: transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+}
+#ra-panel-l,
+#ra-panel-r {
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+}
+#ra-headmatter {
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+}
+#ra-responsivemenu {
+  background: #007a4d;
+  color: #fff;
+}
+#ra-responsivemenu-btn-l {
+  border-right: rgba(0,0,0,0.3) 1px solid;
+}
+#ra-responsivemenu-header {
+  float: right;
+}
+.header {
+  padding: 0 0.5em;
+}
+.logo-right {
+  float: right;
+  margin-top: -3px;
+  vertical-align: middle;
+}
+.nav {
+  background: #007a4d;
+  color: #fff;
+  font-weight: bold;
+}
+.nav .btn-active {
+  background: #00a165;
+}
+.nav .nav-left {
+  float: left;
+  padding: 0.5em;
+}
+.nav .nav-right {
+  float: right;
+  padding: 0.5em;
+}
+.ra-small .nav .nav-left {
+  width: auto;
+  float: none;
+  margin: 0.25em;
+  border-radius: 3px;
+}
+#fdw-controls,
+#fhp-controls {
+  padding: 0.5em;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+
+#mapid {
+    position: absolute;
+    width: 100%;
+    height: 89%;
+    bottom: 0px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#branding {
+  position: absolute;
+    height: 145px;
+    width: 150px;
+    left: 0;
+    float: left;
+    background: url(../img/logo.png) 30px 60px no-repeat;
+    }
+
+#content {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  bottom: 0px;
+    background: rgb(255,255,255); /* old ie */
+    background: rgba(255,255,255,.9);
+    border-bottom: 1px solid #ccc;
+    border-top: 5px solid #333;
+    overflow-y: hidden;
+    z-index: 2;
+    }
+    
+#about {
+    margin-left: 150px;
+    width: 689px;
+    float: left;
+    padding: 0 20px;
+    border-left: 1px solid #bbb;
+    }
