@@ -141,6 +141,7 @@ addLayer(hfwVAR, 'Hydro Facility Watersheds', 20);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Erosion Risk (1km)', 3);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 4);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 5);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 6);
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
 //addLayer(L.mapbox.tileLayer('landplanner.hm1kg9l2'), 'Building Footprints', 6);
