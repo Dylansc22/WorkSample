@@ -58,11 +58,13 @@
 </div> <!-- End of Container  -->
 
 
-
-
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
         <script>// This webmap refers to a div element with the ID: 'mapid'
             var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-            var map = L.map('mapid', {zoomControl: false, minZoom:3, }).setView([27, -15], 3); //set initial view to entire world view
+            var map = L.map('mapid', {zoomControl: false, minZoom:2, }).setView([27, -15], 3); //set initial view to entire world view
             new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
 
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
@@ -78,8 +80,7 @@
 
         </script>
         <!-- I think having this at the bottom increase load speeds -->
-        <script src='data/ErosionRisk_Nation.js'></script>         <!-- My Local Data -->
-        <script src='data/HydroFacilitiesWatersheds.js'></script>  <!-- My Local Data -->
+
         <script src="js/main.js"></script>  
 
 </body>

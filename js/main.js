@@ -12,7 +12,15 @@ function getMyColor(d) {
         '#ffff80';
 }
 
-
+function getMyColor2(d) {   
+  return d > 4 ? '#6b0000' : 
+        d > 3 ? '#872a08' : 
+        //d > 3 ? '#c46d1b' : 
+        //d > 4 ? '#f5af36' : 
+        d > 2 ? '#fcd75b' : 
+        d > 1 ? '#fce96d' : 
+        '#ffff80';
+}
 
 //Sets the default style of the geojson layer, by calling upon the getMyColor function. The color is based upon the MAX field of geojson. 
 function setStyle(feature) {
@@ -26,8 +34,17 @@ function setStyle(feature) {
   };
 }
 
-
-
+//Sets the default style of the geojson layer, by calling upon the getMyColor function. The color is based upon the MAX field of geojson. 
+function setStyle2(feature) {
+  return {
+    fillColor: getMyColor2(feature.properties.MAX),
+    weight: 1,
+    opacity: 1,
+    color: 'grey',
+    dashArray: '3',
+    fillOpacity: .3,
+  };
+}
 
 //HIGHLIGHT ON HOVER
 //Add highlighted style on mouse hover. 
@@ -47,20 +64,44 @@ function highlightFeature(e) {
     info.update(layer.feature.properties); //Part of INFO ON HOVER functionality
 }//End of HIGHLIGHT ON HOVER
 
+//HIGHLIGHT ON HOVER
+//Add highlighted style on mouse hover. 
+function highlightFeature2(e) {
+    var layer = e.target;
+    layer.setStyle({
+        weight: 2,
+        opacity: 1,
+        color: 'grey',
+        dashArray: '',
+        fillOpacity: 0.7,
+        //fillColor: 'red'
+    });
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+    info.update(layer.feature.properties); //Part of INFO ON HOVER functionality
+}//End of HIGHLIGHT ON HOVER
+
 
 
 
 //Reset the layer style to its default state (defined by our style function). For this to work, make sure our GeoJSON layer is accessible through the geojson variable by defining it before our listeners and assigning the layer to it later:
-var sdfsdf; //this clearly doesn't do anything in my code even though it is needed in the tutorial. Again I think this has something to do with me having the variable declared in the ErosionRisk_Nation.js file.
+var ernationVAR;
+var hfwVAR;
+
 // OUR LISTENERS
 //LISTENER: Define what happens on mouseout. 
 function resetHighlight(e) {
     ernationVAR.resetStyle(e.target);
     info.update(); //Part of INFO ON HOVER functionality
 
+}
+
+function resetHighlight2(e) {
     hfwVAR.resetStyle(e.target);
     info.update(); //Part of INFO ON HOVER functionality
 }
+
 //LISTENER: Zoom to Layer
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
@@ -77,18 +118,35 @@ function onEachFeature(feature, layer) {
     });
 }
 
+//Now we’ll use the onEachFeature option to add the listeners on our state layers:
+//The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. A common reason to use this option is to attach a popup to features when they are clicked.
+function onEachFeature2(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature2, //part of HIGHLIGHT ON HOVER functionality
+        mouseout: resetHighlight2,    //part of HIGHLIGHT ON HOVER functionality
+        click: zoomToFeature,        //part of ZOOM TO NATION functionality
+                      //Try to add a bindPopup code here bindPopup('<b>' + feature.properties.MAX + '</b><br>');
+    });
+}
 
-
-ernationVAR = L.geoJson(ernation, {
+ernationVAR = L.geoJson(null, {
     style: setStyle,
     onEachFeature: onEachFeature
 })/*.addTo(map)*/;   //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
-hfwVAR = L.geoJson(hfw, {
-  style: setStyle,
-  onEachFeature: onEachFeature
+hfwVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
 })/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
 
+$.getJSON("data/Topojson_ErosionRisk_Nation.js", function(data) {
+  var x = topojson.feature(data, data.objects.ErosionRisk_Nation).features;
+  ernationVAR.addData(x);
+});
 
+$.getJSON("data/Topojson_ErosionRisk_SABasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.SABasin).features;
+  hfwVAR.addData(x);
+});
 
 
 //INFO ON HOVER
