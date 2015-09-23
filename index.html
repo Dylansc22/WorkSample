@@ -7,83 +7,71 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        
+
         <!-- Mapbox Css and Js Libraries-->
         <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
-        
+
         <!--Awesome Fonts Library-->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
         <!-- Google Fonts (from https://www.google.com/fonts )-->
         <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-
-        <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
-        <!-- d3 libaries -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-    </head>
+            <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
+            <!-- d3 libaries -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+        </head>
 <body>
-<div id='container'>
-    <div id='mapid'><!-- Creates Map -->
-    <div id='map-ui'> <!--Creates Map UI-->
-        <h2 style="padding:15px;">Dylan Cobean Work Sample</h2>
-        <div class="btn-group-vertical " id='layerControls'>
-        <p>Select a Layer:</p>
-        </div>
-
-        <div class="btn-group" id='baseControls' style="padding: 15px">
-        <p>Basemap:</p>
-        <a class='btn btn-success btn-xs' href='#' id="streets"><i class='fa fa-road'></i> Streets</a> 
-        <a class='btn btn-success btn-xs' href='#' id="satellite"><i class="fa fa-globe"></i> Satellite</a>
-        </div>
-        <div class="btn-group-vertical">
-        <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
-        </div>
-        <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
-    </div>
-
-        <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
-        But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
-    <div class="leaflet-top leaflet-right">
-        <div class="leaflet-control-zoom leaflet-bar leaflet-control">
-        <a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a>
-        <a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out">-</a>
-        <!-- adds a 'globe' button that zooms to the entire extent of the globe -->
-            <div class="btn-group" id='locationControls'> 
-                <a class="btn btn-default btn-xs" href="#" id="World"><i class="fa fa-globe fa-2x fa-align-center"></i></a>  
+    <div id='container'><!-- Creates Container -->
+        <div id='mapid'><!-- Creates Map -->
+                <div class="leaflet-top leaflet-right">
+            <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                <a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a>
+                <a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out">-</a>
+                <!-- adds a 'globe' button that zooms to the entire extent of the globe -->
+                <div class="btn-group" id='locationControls'>
+                    <a class="btn btn-default btn-xs" href="#" id="World"><i class="fa fa-globe fa-2x fa-align-center"></i></a>
+                </div>
             </div>
         </div>
-        </div>
-        </div> <!-- End of Creates Map  -->
-</div> <!-- End of Container  -->
+        <div id='map-ui'> <!--Creates Map UI-->    <h2 style="padding:15px;">Dylan Cobean Work Sample</h2>
+            <div class="btn-group-vertical " id='layerControls'>
+                <p>Select a Layer:</p>
+            </div>
+            <div class="btn-group" id='baseControls' style="padding: 15px">
+                <p>Basemap:</p>
+                <a class='btn btn-success btn-xs' href='#' id="streets"><i class='fa fa-road'></i> Streets</a>
+                <a class='btn btn-success btn-xs' href='#' id="satellite"><i class="fa fa-globe"></i> Satellite</a>
+            </div>
+            <div class="btn-group-vertical">
+                <a class='btn btn-default btn-xs' target="_blank" href="https://github.com/GeoSprocket/btv-geographic/tree/master/geodata"><i class='fa fa-download'></i> Download Source Data</a>
+            </div>
+        </div><!--Creates Map UI--> 
+        </div><!-- Creates Map -->
+        <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
+        <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
+        But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
 
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
-    <script src="http://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
+    </div><!-- Creates Container -->
+</body>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
         <script>// This webmap refers to a div element with the ID: 'mapid'
-            var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-            var map = L.map('mapid', {zoomControl: false, minZoom:2, }).setView([27, -15], 3); //set initial view to entire world view
-            new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
-
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
-                //id: 'mapbox.light',   << alternative map baselayer
-                //id: 'mapbox.dark',   
-                //id: 'dylanc.61e6f75f', < 2nd alternative map baselayer
-                id: 'dylanc.e2755890', 
-            }).addTo(map).setZIndex(0);
-
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
-                id: 'dylanc.825da50a',
-            }).addTo(map).setZIndex(999);
-
+                    var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
+                    var map = L.map('mapid', {zoomControl: false, minZoom:2, }).setView([27, -15], 3); //set initial view to entire world view
+                    new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
+                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
+                        //id: 'mapbox.light',   << alternative map baselayer
+                        //id: 'mapbox.dark',
+                        //id: 'dylanc.61e6f75f', < 2nd alternative map baselayer
+                        id: 'dylanc.e2755890',
+                    }).addTo(map).setZIndex(0);
+                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
+                        id: 'dylanc.825da50a',
+                    }).addTo(map).setZIndex(999);
         </script>
         <!-- I think having this at the bottom increase load speeds -->
-
-        <script src="js/main.js"></script>  
-
-</body>
-
-
+        <script src="js/main.js"></script>
+    </body>
 </html>
