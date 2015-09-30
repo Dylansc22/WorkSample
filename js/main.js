@@ -1,5 +1,5 @@
 
-
+res.addHeader("Access-Control-Allow-Headers", "Content-Type, authorization");
 
 //Set color pallet for each nation's erosion risk score
 function getMyColor(d) {   
