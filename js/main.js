@@ -119,7 +119,6 @@ function setStyle(feature) {
 =======
 
 
-
 //Set color pallet for each nation's erosion risk score
 function getMyColor(d) {   
   return d > 7 ? '#6b0000' : 
