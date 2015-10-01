@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-html {
-    background: #777777;
-}
-
-body {
-    background: #654321;
-}
-
-#mapid {
-    position: absolute;
-    width: 85%;
-    height: 95%;
-    bottom: 0px;
-    right: 0px;
-=======
 html, body {
     top: 0px;
     bottom: 0px;
@@ -47,7 +31,7 @@ html, body {
 
 .leaflet-bar {
   color: white;
-border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
+/*border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
 and the globe is correctly spaced. */
 }
 
@@ -65,7 +49,6 @@ and the globe is correctly spaced. */
     line-height: 55px;
     margin: 5px;
 
->>>>>>> v2_interactivebuild
 }
 .leaflet-container h2 {
     color: white;
@@ -74,8 +57,6 @@ and the globe is correctly spaced. */
     margin: 5px;
 }
 
-<<<<<<< HEAD
-=======
 .leaflet-container h5 {
     color: white;
     font-size: 50px;
@@ -122,7 +103,6 @@ and the globe is correctly spaced. */
     }
 
 
->>>>>>> v2_interactivebuild
 .legend label, .legend span {
     display: block;
     float: left;
@@ -146,53 +126,6 @@ and the globe is correctly spaced. */
     background: rgba(30, 30, 30, 0);
 }
 
-<<<<<<< HEAD
-#map-ui {
-  /*background: #fff;   I don't think the border looks good. Rather than delete I'll comment it off */
-  position:absolute;
-  top:8%;
-  left:2%;
-  z-index:1;
-  border-radius:3px;
-  width: 11%;
-  border:1px solid rgba(0,0,0,0.4);
-  }
-
-.map-ui a {
-    font-size:13px;
-    font-family: cursive;
-    color:#404040;
-    display:block;
-    margin:0;padding:0;
-    padding:10px;
-    text-decoration:none;
-    border-bottom:1px solid rgba(0,0,0,0.25);
-    text-align:center;
-    }
-.map-ui a:first-child {
-    border-radius:3px 3px 0 0;
-    }
-.map-ui a:last-child {
-    border:none;
-    border-radius:0 0 3px 3px;
-    }
-.map-ui a:hover {
-    background:#f8f8f8;
-    color:#404040;
-    }
-.map-ui a.active {
-    background:#2C2929;
-    color:#FFF;
-    }
-.map-ui a.active:hover {
-    background:#3074a4;
-    }
-
-#layerControls {
-    padding: 10px;
-    }
-
-=======
 /*Part of CREATE STATIC LEGEND functionality*/
 .legend {
     line-height: 18px;
@@ -206,20 +139,6 @@ and the globe is correctly spaced. */
     opacity: 0.7;
 }
 
-#World {
-    color: black;
-    width: 26px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    border-top-width: 0px;
-    margin-top: 1px;
-    border-right-width: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 0px;
-    border-color: black;
-}
 
 /*End of Part of CREATE STATIC LEGEND functionality*/
 
@@ -328,4 +247,35 @@ input[type="radio"] {
     padding: 0 20px;
     border-left: 1px solid #bbb;
     }
->>>>>>> v2_interactivebuild
+
+
+/* ---------------------------
+       UI CSS ELEMENTS 
+---------------------------- */
+
+/*Globe button box positioning and adjusting the actual globe's default color */
+
+#GlobeButtonBox {
+  z-index: 1;
+  float:right;            
+  margin-right:11px;
+  margin-top:70px;
+}
+
+#Globe {
+    color: black;
+    padding: 1px 2px;  
+    border-color: gray;
+}
+
+#Globe:hover {
+  background-color: gray;
+}
+
+.leaflet-control-zoom-in:hover {
+  background-color: gray;
+}
+
+.leaflet-control-zoom-out:hover {
+  background-color: gray;
+}
