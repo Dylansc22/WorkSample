@@ -140,7 +140,7 @@ hfwVAR = L.geoJson(null, {
 
 $.getJSON("data/Topojson_ErosionRisk_Nation.js", function(data) {
   var x = topojson.feature(data, data.objects.ErosionRisk_Nation).features;
-  ernationVAR.addData(x);
+  ernationVAR.addData(x).addTo(map);
 });
 
 $.getJSON("data/Topojson_ErosionRisk_SABasin.js", function(data) {
@@ -219,7 +219,7 @@ function addLayer(layer, name, zIndex) {
 var ui = document.getElementById('layerControls');
 addLayer(ernationVAR, 'Erosion Risk by Nation', 10);
 addLayer(hfwVAR, 'Hydro Facility Watersheds', 20);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Erosion Risk (1km)', 3);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 3)
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 4);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 5);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 6);
@@ -238,7 +238,7 @@ topLayer.setZIndex(7);*/
 
 
 //SWITCH BASEMAPS
-document.getElementById('streets').onclick = function() {
+/*document.getElementById('streets').onclick = function() {
   map.removeLayer(baseLayer);
   map.removeLayer(topLayer);
   baseLayer = L.mapbox.tileLayer('landplanner.hl6099hm').addTo(map);
@@ -258,7 +258,7 @@ document.getElementById('satellite').onclick = function() {
   topPane.appendChild(topLayer.getContainer());
   topLayer.setZIndex(7);
 };
-
+*/
 
 
 // SET LOCATION BOOKMARKS
