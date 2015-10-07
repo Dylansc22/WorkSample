@@ -238,7 +238,7 @@ topLayer.setZIndex(7);*/
 
 
 //SWITCH BASEMAPS
-document.getElementById('streets').onclick = function() {
+/*document.getElementById('streets').onclick = function() {
   map.removeLayer(baseLayer);
   map.removeLayer(topLayer);
   baseLayer = L.mapbox.tileLayer('landplanner.hl6099hm').addTo(map);
@@ -258,7 +258,7 @@ document.getElementById('satellite').onclick = function() {
   topPane.appendChild(topLayer.getContainer());
   topLayer.setZIndex(7);
 };
-
+*/
 
 
 // SET LOCATION BOOKMARKS
