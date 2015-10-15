@@ -19,17 +19,44 @@
             <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
             <!-- d3 libaries -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
         </head>
 <body>
     <div id='container'><!-- Creates Container -->
+
         <div id='mapid'><!-- Creates Map -->
+                        
+
+                        <div class="btn-group-vertical testing" data-toggle="buttons">
+  <label class="btn btn-default" id='star'>
+    <input type="checkbox" autocomplete="off" checked><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+  </label>
+  <label class="btn btn-success">
+    <input type="checkbox" autocomplete="off"> Checkbox 2
+  </label>
+  <label class="btn btn-default">
+    <input type="checkbox" autocomplete="off"> Checkbox 3
+  </label>
+</div>
+
+
             <div class="leaflet-top leaflet-right"></div>
             <!-- adds a 'globe' button that zooms to the entire extent of the globe -->
             
             <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div>
 
+
+
             <div id='map-ui'> <!--Creates Map UI-->    <h3>Dylan Cobean Work Sample</h3>
-                <div class="btn-group-vertical " id='layerControls'>
+                <div class="btn-group-vertical btn-success testing" data-toggle="buttons" id='newlayerControls'>
+                                    <h3>New Select a Layer:</h3>
+                </div>
+
+
+                <div class="btn-group-vertical" id='layerControls'>
                     <h3>Select a Layer:</h3>
                 </div>
                
@@ -42,7 +69,7 @@
     </div><!-- Creates Container -->
 </body>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
         <script>// This webmap refers to a div element with the ID: 'mapid'

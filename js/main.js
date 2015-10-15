@@ -140,7 +140,7 @@ hfwVAR = L.geoJson(null, {
 
 $.getJSON("data/Topojson_ErosionRisk_Nation.js", function(data) {
   var x = topojson.feature(data, data.objects.ErosionRisk_Nation).features;
-  ernationVAR.addData(x).addTo(map);
+  ernationVAR.addData(x);
 });
 
 $.getJSON("data/Topojson_ErosionRisk_SABasin.js", function(data) {
@@ -197,18 +197,20 @@ function addLayer(layer, name, zIndex) {
   // and off.
   var link = document.createElement('a');
   link.href = '#';
-  link.className = 'btn btn-primary btn-sm';
-  link.type = 'button';
+  link.className = 'btn btn-default btn-sm';
+  //link.type = 'button';  I dont think I need this anymore(?)
+  link.setAttribute("data-toggle", "button")  //This added code works!!
+
   link.innerHTML = name;
-  link.onclick = function(e) {
+  link.onclick = function(e) {  
     e.preventDefault();
     e.stopPropagation();
-    if (map.hasLayer(layer)) {
-      map.removeLayer(layer);
-      this.className = 'btn btn-primary btn-sm';
-    } else {
-      map.addLayer(layer);
-      this.className = 'active btn btn-primary btn-sm';
+    if (map.hasLayer(layer)) {                                //IF the map has the layer on, when clicked remove the layer ans set the clicked button to 'btn btn-primary btn-sm' css settings
+      map.removeLayer(layer);                                 //
+      this.className = 'btn btn-default btn-sm';              //
+    } else {                                                  //If else (ie if the map doesn't have the layer on, clicking the button will turn on the layer, and turn the button to active)
+      map.addLayer(layer);                                    //
+      this.className = 'btn btn-default btn-sm';       //
     }
   };
   ui.appendChild(link);
@@ -223,6 +225,7 @@ addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 4);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 5);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 6);
+
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
 //addLayer(L.mapbox.tileLayer('landplanner.hm1kg9l2'), 'Building Footprints', 6);

@@ -184,6 +184,11 @@ and the globe is correctly spaced. */
   color: #fff;
   font-weight: bold;
 }
+
+/*.btn:hover { 
+    background-color: yellow;
+}*/
+
 .nav .btn-active {
   background: #00a165;
 }
@@ -288,3 +293,19 @@ actual globe's default color */
 .leaflet-control-zoom-out:hover {
   background-color: gray;
 }
+
+
+/* ---------------------------
+       TESTING NEW STUFF 
+---------------------------- */
+
+/*
+----- TRING TO CREATE BETTER INTERACTIVE BUTTONS -----
+*/
+
+.testing {
+  position: relative;
+  z-index: 3;
+}
+
+
