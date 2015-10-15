@@ -205,12 +205,14 @@ function addLayer(layer, name, zIndex) {
   link.onclick = function(e) {  
     e.preventDefault();
     e.stopPropagation();
-    if (map.hasLayer(layer)) {                                //IF the map has the layer on, when clicked remove the layer ans set the clicked button to 'btn btn-primary btn-sm' css settings
+    if (map.hasLayer(layer)) {
+      this.className = 'btn btn-default btn-sm';                                //IF the map has the layer on, when clicked remove the layer ans set the clicked button to 'btn btn-primary btn-sm' css settings
       map.removeLayer(layer);                                 //
-      this.className = 'btn btn-default btn-sm';              //
-    } else {                                                  //If else (ie if the map doesn't have the layer on, clicking the button will turn on the layer, and turn the button to active)
+                    //
+    } else {
+      this.className = 'btn btn-default btn-sm active';                                                  //If else (ie if the map doesn't have the layer on, clicking the button will turn on the layer, and turn the button to active)
       map.addLayer(layer);                                    //
-      this.className = 'btn btn-default btn-sm';       //
+             //
     }
   };
   ui.appendChild(link);

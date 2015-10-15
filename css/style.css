@@ -21,19 +21,21 @@ p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
 
+
 #map-ui {
   text-align: center;
-  width:200px;
   position: absolute;
-  bottom: 0px;
-  padding: 10px;
+  float: left;
+  bottom: 10px;
+  left:10px;
   margin: 10px; 
-  border: 2px solid gray; /*border-right: 2px solid red;*/
-  /* border-radius: 10px; */
+  /*border: 2px solid gray;*/ /*border-right: 2px solid red;*/
+  border-radius: 10px; 
   background: rgba(0,0,0,0.3);
   font-family: 'Fjalla One', sans-serif;
   z-index: 1;
 }
+
 
 .leaflet-bar {
   color: white;
@@ -47,6 +49,44 @@ and the globe is correctly spaced. */
   color: gray;
   margin: 5px;
   display: inline;
+}
+
+.leaflet-container h1 {
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 5px;
+
+}
+.leaflet-container h2 {
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 5px;
+}
+
+.leaflet-container h5 {
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 5px;
+    display: inline;
+
+}
+.leaflet-container h6 {
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 5px;
+    display: inline;
+}
+
+.leaflet-container a {
+  color:black;
+}
+
+.leaflet-container a:hover {
+  color:gray;
 }
 
 .btn-primary {
@@ -67,13 +107,6 @@ and the globe is correctly spaced. */
     /*font: 14px/16px Arial, Helvetica, sans-serif;*/
 }
 
-.leaflet-container a {
-  color:black;
-}
-
-.leaflet-container a:hover {
-  color:gray;
-}
 
 .leaflet-top-pane {
       pointer-events: none;
@@ -186,10 +219,11 @@ input[type="radio"] {
   display: none;
 }
 
-#container {
+.container {
   height: 100%;
   width: 100%;
-  /*margin: 0 auto;*/
+  margin: 0 auto;
+  padding: 0;
 }
 
 #mapid {
@@ -197,7 +231,7 @@ input[type="radio"] {
     height: 100%;
     width: 100%;
     font-family: 'Fjalla One', sans-serif;
-    z-index:0;
+    z-index: 0;
 }
 
 #branding {
@@ -234,6 +268,11 @@ input[type="radio"] {
 /* ---------------------------
        UI CSS ELEMENTS 
 ---------------------------- */
+
+#layerControls {
+  position: relative;
+  z-index: 2;
+}
 
 /*
 ----- GLOBE BUTTON BOX -----

@@ -25,50 +25,28 @@
 
         </head>
 <body>
-    <div id='container'><!-- Creates Container -->
-
+    <div class='container'><!-- Creates Container -->
         <div id='mapid'><!-- Creates Map -->
-                        
-
-                        <div class="btn-group-vertical testing" data-toggle="buttons">
-  <label class="btn btn-default" id='star'>
-    <input type="checkbox" autocomplete="off" checked><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-  </label>
-  <label class="btn btn-default">
-    <input type="checkbox" autocomplete="off"> Checkbox 2
-  </label>
-  <label class="btn btn-default">
-    <input type="checkbox" autocomplete="off"> Checkbox 3
-  </label>
-</div>
-
-
             <div class="leaflet-top leaflet-right"></div>
-            <!-- adds a 'globe' button that zooms to the entire extent of the globe -->
             
+            <!-- adds a 'globe' button that zooms to the entire extent of the globe -->
             <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div>
 
 
 
-            <div id='map-ui'> <!--Creates Map UI-->    <h3>Dylan Cobean Work Sample</h3>
+                    <div id='map-ui'><!--Creates Map UI-->
+                    <div class="btn-group-vertical" id='layerControls'>
+                    </div>
 
-                <div class="btn-group-vertical" id='layerControls'>
-                    <h3>Select a Layer:</h3>
-                </div>
-
-                <div class="btn-group-vertical" id='newlayerControls'>
-                    <h3>Select a Layer:</h3>
-                </div>
-               
-            </div><!--Creates Map UI--> 
-        </div><!-- Creates Map -->
-        <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
-        <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
-        But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
-
-    </div><!-- Creates Container -->
+                    </div><!--Creates Map UI--> 
+                </div><!-- Creates Map -->
+    <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
+    <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
+    But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
+            </div><!-- Creates Container -->
 </body>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
