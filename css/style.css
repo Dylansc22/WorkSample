@@ -33,7 +33,7 @@ p, div {
   border-radius: 10px; 
   background: rgba(0,0,0,0.3);
   font-family: 'Fjalla One', sans-serif;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -41,6 +41,11 @@ p, div {
   color: white;
 /*border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
 and the globe is correctly spaced. */
+}
+
+.leaflet-bottom { 
+  z-index:1;        /*While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the map-ui buttons. 
+                    Otherwise when viewed on mobile, the info screen will be in front of the map-ui buttons and you cannot press them */
 }
 
 .propsformat {
@@ -104,6 +109,7 @@ and the globe is correctly spaced. */
     width: 400px;
     padding: 5px;
     margin: 10px;
+    z-index:1;
     /*font: 14px/16px Arial, Helvetica, sans-serif;*/
 }
 
