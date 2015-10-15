@@ -49,42 +49,6 @@ and the globe is correctly spaced. */
   display: inline;
 }
 
-.leaflet-container h1 {
-    color: white;
-    font-size: 50px;
-    line-height: 55px;
-    margin: 5px;
-
-}
-.leaflet-container h2 {
-    color: white;
-    font-size: 30px;
-    line-height: 35px;
-    margin: 5px;
-}
-
-.leaflet-container h5 {
-    color: white;
-    font-size: 50px;
-    line-height: 55px;
-    margin: 5px;
-    display: inline;
-
-}
-.leaflet-container h6 {
-    color: white;
-    font-size: 30px;
-    line-height: 35px;
-    margin: 5px;
-    display: inline;
-}
-
-.leaflet-container a {
-  color: #A5A5A5;
-  font-weight: 400;
-  text-decoration: none;
-}
-
 .btn-primary {
   color: #fff;
   background-color: #000000;
@@ -103,6 +67,13 @@ and the globe is correctly spaced. */
     /*font: 14px/16px Arial, Helvetica, sans-serif;*/
 }
 
+.leaflet-container a {
+  color:black;
+}
+
+.leaflet-container a:hover {
+  color:gray;
+}
 
 .leaflet-top-pane {
       pointer-events: none;
@@ -282,6 +253,7 @@ actual globe's default color */
     border-color: gray;
 }
 
+/*
 #Globe:hover {
   background-color: gray;
 }
@@ -292,7 +264,7 @@ actual globe's default color */
 
 .leaflet-control-zoom-out:hover {
   background-color: gray;
-}
+}*/
 
 
 /* ---------------------------
