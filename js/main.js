@@ -157,12 +157,22 @@ info.onAdd = function (map) {
     return this._div;
 };
 // method that we will use to update the control based on feature properties passed
+
+//-------------------- ORIGINAL CODE FOR INFO LEAFLET CONTROL -------------------
+//
+//info.update = function (props) {
+//    this._div.innerHTML = /*'<h4>Global Erosion Risk Score By Nation</h4>' + */(props ?
+//        '<div class="propsformat">Country: <h5>' + props.CNTRY_NAME + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + props.MAX + '</h6></div><br>'        : '<div class="propsformat">Country: <h5>' + '' + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + '' + '</h6></div><br>');
+//
+//
+
+// ------------------- NEW CODE (TRYING TO IMPROVE BOOTSTRAP VISUALIZATION ON MAP)//
 info.update = function (props) {
-    this._div.innerHTML = /*'<h4>Global Erosion Risk Score By Nation</h4>' + */(props ?
-        '<div class="propsformat">Country: <h5>' + props.CNTRY_NAME + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + props.MAX + '</h6></div><br>'        : '<div class="propsformat">Country: <h5>' + '' + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + '' + '</h6></div><br>');
+    this._div.innerHTML = (props ?'<div class="propsformat"><h5>' + props.CNTRY_NAME + '</h5>: Country</div><br><div class="propsformat"><h6>' + props.MAX + '</h6>: Erosion Score</div><br>' : '<div class="propsformat"><h5>' + '' + '</h5> Country</div><br><div class="propsformat"><h6>' + '' + '</h6> Erosion Score</div><br>');
 
 };
 info.addTo(map);
+
 
 $( ".leaflet-bottom.leaflet-right").addClass('col-xs-12');
 $( ".info.leaflet-control").addClass('col-xs-3');//THIS MAKES THE INFO LEAFLET CONTROLER BOOTSTRAP FRIENDLY!!!! WOOOOOOOT!!! TOO EASY!!! =]

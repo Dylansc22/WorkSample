@@ -50,10 +50,11 @@ and the globe is correctly spaced. */
 
 .propsformat {
   font-size: 20px;
-  line-height: 25px;
+  line-height: 35px;
   color: gray;
-  margin: 5px;
+  margin: 10px;
   display: inline;
+  text-align: right;
 }
 
 .leaflet-container h1 {
@@ -113,6 +114,7 @@ and the globe is correctly spaced. */
     padding: 10px;
     margin: 10px;
     z-index:1;
+    text-align: right;
     /*font: 14px/16px Arial, Helvetica, sans-serif;*/
 }
 
