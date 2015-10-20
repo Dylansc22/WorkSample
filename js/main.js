@@ -160,8 +160,12 @@ info.onAdd = function (map) {
 info.update = function (props) {
     this._div.innerHTML = /*'<h4>Global Erosion Risk Score By Nation</h4>' + */(props ?
         '<div class="propsformat">Country: <h5>' + props.CNTRY_NAME + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + props.MAX + '</h6></div><br>'        : '<div class="propsformat">Country: <h5>' + '' + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + '' + '</h6></div><br>');
+
 };
 info.addTo(map);
+
+$( ".leaflet-bottom.leaflet-right").addClass('col-xs-12');
+$( ".info.leaflet-control").addClass('col-xs-3');//THIS MAKES THE INFO LEAFLET CONTROLER BOOTSTRAP FRIENDLY!!!! WOOOOOOOT!!! TOO EASY!!! =]
 //END OF INFO ON HOVER
 
 
