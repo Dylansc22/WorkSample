@@ -87,7 +87,7 @@ function highlightFeature2(e) {
 
 //Reset the layer style to its default state (defined by our style function). For this to work, make sure our GeoJSON layer is accessible through the geojson variable by defining it before our listeners and assigning the layer to it later:
 var ernationVAR;
-var hfwVAR;
+var SABasinVAR;
 
 // OUR LISTENERS
 //LISTENER: Define what happens on mouseout. 
@@ -98,7 +98,7 @@ function resetHighlight(e) {
 }
 
 function resetHighlight2(e) {
-    hfwVAR.resetStyle(e.target);
+    SABasinVAR.resetStyle(e.target);
     info.update(); //Part of INFO ON HOVER functionality
 }
 
@@ -133,19 +133,75 @@ ernationVAR = L.geoJson(null, {
     style: setStyle,
     onEachFeature: onEachFeature
 })/*.addTo(map)*/;   //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
-hfwVAR = L.geoJson(null, {
+SABasinVAR = L.geoJson(null, {
   style: setStyle2,
   onEachFeature: onEachFeature2
 })/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+NABasinVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+ASBasinVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+AFBasinVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+AUBasinVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+EUBasinVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+OCBasinVAR = L.geoJson(null, {
+  style: setStyle2,
+  onEachFeature: onEachFeature2
+})/*.addTo(map)*/;  //Commenting off the ".addTo(map)" prevents the Hydrofacility layer from being visualized on initial load. 
+
+
 
 $.getJSON("data/Topojson_ErosionRisk_Nation.js", function(data) {
   var x = topojson.feature(data, data.objects.ErosionRisk_Nation).features;
   ernationVAR.addData(x);
 });
 
-$.getJSON("data/Topojson_ErosionRisk_SABasin.js", function(data) {
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/SABasin.js", function(data) {
   var x = topojson.feature(data, data.objects.SABasin).features;
-  hfwVAR.addData(x);
+  SABasinVAR.addData(x);
+});
+
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/NABasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.NABasin).features;
+  NABasinVAR.addData(x);
+});
+
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/ASBasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.ASBasin).features;
+  ASBasinVAR.addData(x);
+});
+
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/AFBasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.AFBasin).features;
+  AFBasinVAR.addData(x);
+});
+
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/AUBasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.OCBasin).features;
+  AUBasinVAR.addData(x);
+});
+
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/EUBasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.OCBasin).features;
+  EUBasinVAR.addData(x);
+});
+
+$.getJSON("data/Topojson_ErosionRisk_Basin_Continents/OCBasin.js", function(data) {
+  var x = topojson.feature(data, data.objects.OCBasin).features;
+  OCBasinVAR.addData(x);
 });
 
 
@@ -158,17 +214,9 @@ info.onAdd = function (map) {
 };
 // method that we will use to update the control based on feature properties passed
 
-//-------------------- ORIGINAL CODE FOR INFO LEAFLET CONTROL -------------------
-//
-//info.update = function (props) {
-//    this._div.innerHTML = /*'<h4>Global Erosion Risk Score By Nation</h4>' + */(props ?
-//        '<div class="propsformat">Country: <h5>' + props.CNTRY_NAME + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + props.MAX + '</h6></div><br>'        : '<div class="propsformat">Country: <h5>' + '' + '</h5></div><br><div class="propsformat">Erosion Score: <h6>' + '' + '</h6></div><br>');
-//
-//
 
-// ------------------- NEW CODE (TRYING TO IMPROVE BOOTSTRAP VISUALIZATION ON MAP)//
 info.update = function (props) {
-    this._div.innerHTML = (props ?'<div class="propsformat"><h5>' + props.CNTRY_NAME + '</h5>: Country</div><br><div class="propsformat"><h6>' + props.MAX + '</h6>: Erosion Score</div><br>' : '<div class="propsformat"><h5>' + '' + '</h5> Country</div><br><div class="propsformat"><h6>' + '' + '</h6> Erosion Score</div><br>');
+    this._div.innerHTML = (props ?'<div class="propsformat"><h5>' + props.CNTRY_NAME/*FYI: theseCNTRY_NAMEs are case-sensitive when I make them in the topojson cmd line*/ + '</h5>: Country</div><br><div class="propsformat"><h6>' + props.MAX + '</h6>: Erosion Score</div><br>' : '<div class="propsformat"><h5>' + '' + '</h5> Country</div><br><div class="propsformat"><h6>' + '' + '</h6> Erosion Score</div><br>');
 
 };
 info.addTo(map);
@@ -235,12 +283,18 @@ function addLayer(layer, name, zIndex) {
 
 // ADD LAYER CONTROLLER
 var ui = document.getElementById('layerControls');
-addLayer(ernationVAR, 'Erosion Risk by Nation', 10);
-addLayer(hfwVAR, 'Hydro Facility Watersheds', 20);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 3)
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 4);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 5);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 6);
+addLayer(ernationVAR, 'Erosion Risk by Nation', 1);
+addLayer(SABasinVAR, 'South American Watersheds', 1);
+addLayer(NABasinVAR, 'North American Watersheds', 1);
+addLayer(ASBasinVAR, 'Asia Watersheds', 1);
+addLayer(AFBasinVAR, 'Africa Watersheds', 1);
+addLayer(AUBasinVAR, 'Austrailia Watersheds', 1);
+addLayer(EUBasinVAR, 'Europe Watersheds', 1);
+addLayer(OCBasinVAR, 'Oceania Watersheds', 1);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 4)
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 5);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 7);
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
