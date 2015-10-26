@@ -190,12 +190,12 @@ $.getJSON("data/Topojson_ErosionRisk_Basin_Continents/AFBasin.js", function(data
 });
 
 $.getJSON("data/Topojson_ErosionRisk_Basin_Continents/AUBasin.js", function(data) {
-  var x = topojson.feature(data, data.objects.OCBasin).features;
+  var x = topojson.feature(data, data.objects.AUBasin).features;
   AUBasinVAR.addData(x);
 });
 
 $.getJSON("data/Topojson_ErosionRisk_Basin_Continents/EUBasin.js", function(data) {
-  var x = topojson.feature(data, data.objects.OCBasin).features;
+  var x = topojson.feature(data, data.objects.EUBasin).features;
   EUBasinVAR.addData(x);
 });
 
