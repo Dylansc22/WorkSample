@@ -1,10 +1,4 @@
 html, body {
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    margin: 0px;
-    padding: 0px;
     height: 100%;
     width: 100%;
     font-size: 100%;
@@ -21,13 +15,29 @@ p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
 
+.container-fluid {
+  height:100%;
+}
 
+
+/* ---------------------------
+          MAP CSS 
+---------------------------- */
+
+/* Map */
+#mapid {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    font-family: 'Fjalla One', sans-serif;
+    z-index: 0;
+}
+
+/* Map UI Stuff */
 #map-ui {
   text-align: center;
-  position: absolute;
+  position: relative;
   float: left;
-  bottom: 200px;
-  left:10px;
   margin: 10px; 
   /*border: 2px solid gray;*/ /*border-right: 2px solid red;*/
   border-radius: 10px; 
@@ -35,6 +45,15 @@ p, div {
   font-family: 'Fjalla One', sans-serif;
   z-index: 2;
 }
+
+.navbar.navbar-inverse.navbar-static-top {
+  border-bottom-width: 5px;
+  border-color: gray;
+  margin-bottom: 0px;
+}
+
+
+
 
 
 .leaflet-bar {
@@ -129,45 +148,6 @@ and the globe is correctly spaced. */
   background-color: red;
 }
 
-.legend label, .legend span {
-    display: block;
-    float: left;
-    height: 15px;
-    width: 33%;
-    text-align: center;
-    font-size: 10px;
-    color: white;
-}
-
-.my-legend {
-    display: block;
-    float: right;
-    height: 15px;
-    width: 33%;
-    text-align: center;
-    font-size: 10px;
-    color: white;
-}
-.map-legends.wax-legends {
-    background: rgba(30, 30, 30, 0);
-}
-
-/*Part of CREATE STATIC LEGEND functionality*/
-.legend {
-    line-height: 18px;
-    color: #555;
-}
-.legend i {
-    width: 18px;
-    height: 18px;
-    float: left;
-    margin-right: 8px;
-    opacity: 0.7;
-}
-
-
-/*End of Part of CREATE STATIC LEGEND functionality*/
-
 #ra-container {
   transition: transform 0.5s;
   -webkit-transition: -webkit-transform 0.5s;
@@ -199,11 +179,7 @@ and the globe is correctly spaced. */
   margin-top: -3px;
   vertical-align: middle;
 }
-.nav {
-  background: #007a4d;
-  color: #fff;
-  font-weight: bold;
-}
+
 
 /*.btn:hover { 
     background-color: yellow;
@@ -242,13 +218,7 @@ input[type="radio"] {
   padding: 0;
 }
 
-#mapid {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    font-family: 'Fjalla One', sans-serif;
-    z-index: 0;
-}
+
 
 #branding {
   position: relative;
@@ -308,6 +278,15 @@ actual globe's default color */
     border-color: gray;
 }
 
+.leaflet-control-zoom .leaflet-bar .leaflet-control {
+  margin-right:11px;
+}
+
+#infoscreen {
+  position: relative;
+  margin-bottom: 50px;
+}
+
 /*
 #Globe:hover {
   background-color: gray;
@@ -322,6 +301,47 @@ actual globe's default color */
 }*/
 
 
+
+.legend label, .legend span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 33%;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+
+.my-legend {
+    display: block;
+    float: right;
+    height: 15px;
+    width: 33%;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+.map-legends.wax-legends {
+    background: rgba(30, 30, 30, 0);
+}
+
+/*Part of CREATE STATIC LEGEND functionality*/
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+
+/*End of Part of CREATE STATIC LEGEND functionality*/
+
+
 /* ---------------------------
        TESTING NEW STUFF 
 ---------------------------- */
@@ -330,18 +350,12 @@ actual globe's default color */
 ----- TRING TO CREATE BETTER INTERACTIVE BUTTONS -----
 */
 
-.testing {
-
-  position: relative;
-  z-index: 3;
-  background-color: #666666;
-  font-color: white;
-  border-radius: 10px;
-  border:2px;
-  border-color: white;
+.btn .btn-primary .dropdown-toggle {
+  margin-top: 20px;
 }
 
 #hydrobasins {
+  position: relative;
   text-align: center;
 }
 

@@ -223,7 +223,7 @@ info.addTo(map);
 
 
 $( ".leaflet-bottom.leaflet-right").addClass('col-xs-12');
-$( ".info.leaflet-control").addClass('col-xs-3');//THIS MAKES THE INFO LEAFLET CONTROLER BOOTSTRAP FRIENDLY!!!! WOOOOOOOT!!! TOO EASY!!! =]
+$( ".info.leaflet-control").addClass('col-xs-3').attr('id', 'infoscreen');
 //END OF INFO ON HOVER
 
 
@@ -298,7 +298,6 @@ addLayer(AUBasinVAR, 'Austrailia Watersheds', 1);
 addLayer(EUBasinVAR, 'Europe Watersheds', 1);
 addLayer(OCBasinVAR, 'Oceania Watersheds', 1);
 
-$('#hydrobasins btn').addClass('col-xs-1');
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
