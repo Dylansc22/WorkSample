@@ -1,5 +1,7 @@
 
-
+$(".btn").mouseup(function(){
+    $(this).blur();
+})
 
 //Set color pallet for each nation's erosion risk score
 function getMyColor(d) {   
