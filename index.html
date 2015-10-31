@@ -64,18 +64,23 @@
 
 
 
-                    <div id='map-ui' class='col-xs-1' style='padding: 0px'><!--Creates Map UI-->
+                <div id='map-ui' class='col-xs-1' style='padding: 0px'><!--Creates Map UI-->
 
-                    <div class="btn-group-vertical" id='layerControls'>
+                    <div id='Topojsons'><h2>Erosion Scores</h2>
+
+                    <div  class="btn btn-primary" type="button" id='NationScore'>By Nation</div>
+
+                    <button type="button" class="btn btn-primary data-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    By Watershed
+                    <span class="caret"></span>
+                    </button>
+                    <h2>Other Datalayers</h2>
                     </div>
-                        <div class="btn-group-horizontal" role="group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Watersheds by Continent
-                        <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" id='hydrobasins'>
-                        </ul>
-                        </div>
+                    <div class="btn-group-vertical" id='layerControls'>
+                   
+                    </div>
+
+                </div>
                
                     
 

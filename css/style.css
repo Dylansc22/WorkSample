@@ -254,6 +254,10 @@ input[type="radio"] {
 /* ---------------------------
        UI CSS ELEMENTS 
 ---------------------------- */
+#NationScore {
+position: relative;
+z-index: 1
+}
 
 #layerControls {
   position: relative;
@@ -354,12 +358,12 @@ actual globe's default color */
   margin-top: 20px;
 }
 
-#hydrobasins {
+#WatershedList {
   position: relative;
   text-align: center;
 }
 
-#hydrobasins .btn {
+#WatershedList .btn {
   width: 190px;
 }
 
