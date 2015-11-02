@@ -41,7 +41,7 @@ p, div {
   margin: 10px; 
   /*border: 2px solid gray;*/ /*border-right: 2px solid red;*/
   border-radius: 10px; 
-  background: rgba(0,0,0,0.3);
+  /*background: rgba(0,0,0,0.3);*/
   font-family: 'Fjalla One', sans-serif;
   z-index: 2;
 }
@@ -111,10 +111,13 @@ and the globe is correctly spaced. */
   z-index:1;
 }
 
-.leaflet-container a {
+#layerControls {
   color:black;
 }
 
+.leaflet-container a {
+  color: black;
+}
 .leaflet-container a:hover {
   color:gray;
 }
@@ -254,14 +257,39 @@ input[type="radio"] {
 /* ---------------------------
        UI CSS ELEMENTS 
 ---------------------------- */
+/*Topojson button and dropdown css*/
 #NationScore {
 position: relative;
 z-index: 1
 }
+#NationScore > a{
+  color:white;
+}
+.btn .btn-primary .dropdown-toggle {
+  margin-top: 20px;
+}
+#WatershedList {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  text-align: center;
+  background-color: transparent;
+}
+#WatershedList .btn {
+  width: 107px;
+}
+
+#map-ui > h3{
+  padding-top: 40px;
+}
+
+
+
 
 #layerControls {
   position: relative;
   z-index: 2;
+  color: black;
 }
 
 /*
@@ -354,16 +382,4 @@ actual globe's default color */
 ----- TRING TO CREATE BETTER INTERACTIVE BUTTONS -----
 */
 
-.btn .btn-primary .dropdown-toggle {
-  margin-top: 20px;
-}
-
-#WatershedList {
-  position: relative;
-  text-align: center;
-}
-
-#WatershedList .btn {
-  width: 190px;
-}
 

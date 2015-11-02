@@ -272,7 +272,6 @@ function addLayer(layer, name, zIndex) {
     if (map.hasLayer(layer)) {
       this.className = 'btn btn-default btn-sm';                                //IF the map has the layer on, when clicked remove the layer ans set the clicked button to 'btn btn-primary btn-sm' css settings
       map.removeLayer(layer);                                 //
-                    //
     } else {
       this.className = 'btn btn-default btn-sm active';                                                  //If else (ie if the map doesn't have the layer on, clicking the button will turn on the layer, and turn the button to active)
       map.addLayer(layer);                                    //
@@ -281,6 +280,33 @@ function addLayer(layer, name, zIndex) {
   };
   ui.appendChild(link);
 };
+
+function addLayer_primary(layer, name, zIndex) {
+  layer.setZIndex(zIndex);
+  // Create a simple layer switcher that toggles layers on
+  // and off.
+  var link = document.createElement('a');
+  link.href = '#';
+  link.className = 'btn btn-primary btn-sm';
+  //link.type = 'button';  I dont think I need this anymore(?)
+  link.setAttribute("data-toggle", "button")  //This added code works!!
+
+  link.innerHTML = name;
+  link.onclick = function(e) {  
+    e.preventDefault();
+    e.stopPropagation();
+    if (map.hasLayer(layer)) {
+      this.className = 'btn btn-primary btn-sm';                                //IF the map has the layer on, when clicked remove the layer ans set the clicked button to 'btn btn-primary btn-sm' css settings
+      map.removeLayer(layer);                                 //
+    } else {
+      this.className = 'btn btn-primary btn-sm active';                                                  //If else (ie if the map doesn't have the layer on, clicking the button will turn on the layer, and turn the button to active)
+      map.addLayer(layer);                                    //
+             //
+    }
+  };
+  ui.appendChild(link);
+};
+
 
 
 // ADD LAYER CONTROLLER
@@ -291,16 +317,16 @@ addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 7);
 
 var ui = document.getElementById('NationScore');
-addLayer(ernationVAR, 'Erosion Risk by Nation', 1);
+addLayer_primary(ernationVAR, 'By Nation', 1);
 
 var ui = document.getElementById('WatershedList');
-addLayer(SABasinVAR, 'South American Watersheds', 1);
-addLayer(NABasinVAR, 'North American Watersheds', 1);
-addLayer(ASBasinVAR, 'Asia Watersheds', 1);
-addLayer(AFBasinVAR, 'Africa Watersheds', 1);
-addLayer(AUBasinVAR, 'Austrailia Watersheds', 1);
-addLayer(EUBasinVAR, 'Europe Watersheds', 1);
-addLayer(OCBasinVAR, 'Oceania Watersheds', 1);
+addLayer(SABasinVAR, 'South America', 1);
+addLayer(NABasinVAR, 'North America', 1);
+addLayer(ASBasinVAR, 'Asia', 1);
+addLayer(AFBasinVAR, 'Africa', 1);
+addLayer(AUBasinVAR, 'Austrailia', 1);
+addLayer(EUBasinVAR, 'Europe', 1);
+addLayer(OCBasinVAR, 'Oceania', 1);
 
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
