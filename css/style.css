@@ -59,6 +59,147 @@ p, div {
 
 
 
+
+
+#branding {
+  position: relative;
+    height: 145px;
+    width: 150px;
+    left: 0;
+    float: left;
+    background: url(../img/logo.png) 30px 60px no-repeat;
+    }
+
+#content {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  bottom: 0px;
+    background: rgb(255,255,255); /* old ie */
+    background: rgba(255,255,255,.9);
+    border-bottom: 1px solid #ccc;
+    border-top: 5px solid #333;
+    overflow-y: hidden;
+    z-index: 2;
+    }
+    
+#about {
+    margin-left: 150px;
+    width: 689px;
+    float: left;
+    padding: 0 20px;
+    border-left: 1px solid #bbb;
+    }
+
+
+/* ---------------------------
+       UI CSS ELEMENTS 
+---------------------------- */
+/*Topojson button and dropdown css*/
+.ErosionScoreButton {
+position: relative;
+z-index: 1;
+width:100%;
+}
+#NationScore > a{
+  color:white;
+}
+.btn .btn-primary .dropdown-toggle {
+  margin-top: 20px;
+}
+
+#WatershedList .btn {
+  width:100%;
+  position: relative;
+}
+
+#WatershedList {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  text-align: center;
+  background-color: transparent;
+}
+
+#map-ui > h3{
+  padding-top: 40px;
+}
+
+
+
+
+#layerControls {
+  position: relative;
+  z-index: 2;
+  color: black;
+  width:100%;
+}
+
+/*
+----- GLOBE BUTTON BOX -----
+positioning and adjusting the
+actual globe's default color */
+
+#GlobeButtonBox {
+  z-index: 1;
+  float:right;            
+  margin-right:11px;
+  margin-top:70px;
+}
+
+#Globe {
+    color: black;
+    padding: 1px 2px;  
+    border-color: gray;
+}
+
+.leaflet-control-zoom .leaflet-bar .leaflet-control {
+  margin-right:11px;
+}
+
+#infoscreen {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+
+
+.legend label, .legend span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 33%;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+
+.my-legend {
+    display: block;
+    float: right;
+    height: 15px;
+    width: 33%;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+.map-legends.wax-legends {
+    background: rgba(30, 30, 30, 0);
+}
+
+/*Part of CREATE STATIC LEGEND functionality*/
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
 .leaflet-bar {
   color: white;
 /*border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
@@ -222,159 +363,6 @@ input[type="radio"] {
   width: 100%;
   margin: 0 auto;
   padding: 0;
-}
-
-
-
-#branding {
-  position: relative;
-    height: 145px;
-    width: 150px;
-    left: 0;
-    float: left;
-    background: url(../img/logo.png) 30px 60px no-repeat;
-    }
-
-#content {
-  position: relative;
-  height: 200px;
-  width: 100%;
-  bottom: 0px;
-    background: rgb(255,255,255); /* old ie */
-    background: rgba(255,255,255,.9);
-    border-bottom: 1px solid #ccc;
-    border-top: 5px solid #333;
-    overflow-y: hidden;
-    z-index: 2;
-    }
-    
-#about {
-    margin-left: 150px;
-    width: 689px;
-    float: left;
-    padding: 0 20px;
-    border-left: 1px solid #bbb;
-    }
-
-
-/* ---------------------------
-       UI CSS ELEMENTS 
----------------------------- */
-/*Topojson button and dropdown css*/
-.ErosionScoreButton {
-position: relative;
-z-index: 1;
-width:100%;
-}
-#NationScore > a{
-  color:white;
-}
-.btn .btn-primary .dropdown-toggle {
-  margin-top: 20px;
-}
-
-#WatershedList .btn {
-  width:100%;
-  position: relative;
-}
-
-#WatershedList {
-  padding: 0px;
-  margin: 0px;
-  position: relative;
-  text-align: center;
-  background-color: transparent;
-}
-
-#map-ui > h3{
-  padding-top: 40px;
-}
-
-
-
-
-#layerControls {
-  position: relative;
-  z-index: 2;
-  color: black;
-}
-
-/*
------ GLOBE BUTTON BOX -----
-positioning and adjusting the
-actual globe's default color */
-
-#GlobeButtonBox {
-  z-index: 1;
-  float:right;            
-  margin-right:11px;
-  margin-top:70px;
-}
-
-#Globe {
-    color: black;
-    padding: 1px 2px;  
-    border-color: gray;
-}
-
-.leaflet-control-zoom .leaflet-bar .leaflet-control {
-  margin-right:11px;
-}
-
-#infoscreen {
-  position: relative;
-  margin-bottom: 50px;
-}
-
-/*
-#Globe:hover {
-  background-color: gray;
-}
-
-.leaflet-control-zoom-in:hover {
-  background-color: gray;
-}
-
-.leaflet-control-zoom-out:hover {
-  background-color: gray;
-}*/
-
-
-
-.legend label, .legend span {
-    display: block;
-    float: left;
-    height: 15px;
-    width: 33%;
-    text-align: center;
-    font-size: 10px;
-    color: white;
-}
-
-.my-legend {
-    display: block;
-    float: right;
-    height: 15px;
-    width: 33%;
-    text-align: center;
-    font-size: 10px;
-    color: white;
-}
-.map-legends.wax-legends {
-    background: rgba(30, 30, 30, 0);
-}
-
-/*Part of CREATE STATIC LEGEND functionality*/
-.legend {
-    line-height: 18px;
-    color: #555;
-}
-.legend i {
-    width: 18px;
-    height: 18px;
-    float: left;
-    margin-right: 8px;
-    opacity: 0.7;
 }
 
 
