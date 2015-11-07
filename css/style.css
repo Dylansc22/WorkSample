@@ -18,7 +18,10 @@ p, div {
 .container-fluid {
   height:100%;
 }
-
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 
 /* ---------------------------
           MAP CSS 
@@ -37,7 +40,7 @@ p, div {
 #map-ui {
   text-align: center;
   position: relative;
-  float: left;
+  display: block;
   margin: 10px; 
   /*border: 2px solid gray;*/ /*border-right: 2px solid red;*/
   border-radius: 10px; 
@@ -258,9 +261,10 @@ input[type="radio"] {
        UI CSS ELEMENTS 
 ---------------------------- */
 /*Topojson button and dropdown css*/
-#NationScore {
+.ErosionScoreButton {
 position: relative;
-z-index: 1
+z-index: 1;
+width:100%;
 }
 #NationScore > a{
   color:white;
@@ -268,15 +272,18 @@ z-index: 1
 .btn .btn-primary .dropdown-toggle {
   margin-top: 20px;
 }
+
+#WatershedList .btn {
+  width:100%;
+  position: relative;
+}
+
 #WatershedList {
   padding: 0px;
   margin: 0px;
   position: relative;
   text-align: center;
   background-color: transparent;
-}
-#WatershedList .btn {
-  width: 107px;
 }
 
 #map-ui > h3{

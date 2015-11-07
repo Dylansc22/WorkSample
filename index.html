@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div> <!--Creates Navbar -->
-
+        <div class="row-fluid">
         <div id='mapid'><!-- Creates Map -->
 
                     <!--<div class='testing col-md-4'><h2>Dylan Scott Cobean Worksample</h2><h3 style='padding-left: 10px'>DRAFT DATA - NOT FOR PUBLIC DISTRIBUTION</h3></div>-->
@@ -64,41 +64,42 @@
 
 
 
-                <div id='map-ui' class='col-xs-1' style='padding: 0px'><!--Creates Map UI-->
+                <div id='map-ui' class='col-xs-3 col-md-1' style='padding: 0px'><!--Creates Map UI-->
 
-                    <div id='Topojsons'><h3>Erosion Scores</h3>
+                  <h3>Erosion Scores</h3>
 
-                    <div class="btn-group-vertical" id='NationScore'>
+                    <div class="btn-group-vertical ErosionScoreButton" id='NationScore'>
                    
                     </div>
 
-                    <div class="btn-group-horizontal" role="group">
-                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group-veritical ErosionScoreButton" role="group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         By Watershed
                         <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" id='WatershedList'>
                         </ul>
                         </div>
-
-                
-                    </div>
+                        
                     <h3>Other Datalayers</h3>
                     <div class="btn-group-vertical" id='layerControls'>
                    
                     </div>
+                
+                    </div>
 
-                </div>
+
                
                     
 
 
 
 
-                    </div><!--Creates Map UI--> 
+                    </div><!--Creates Map--> 
 
 
                 </div><!-- Creates Map -->
+                </div>
     <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
     <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
     But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
