@@ -115,10 +115,11 @@ width:100%;
 
 #WatershedList {
   padding: 0px;
-  margin: 0px;
+  margin: 0 0 15px 0;;
   position: relative;
   text-align: center;
   background-color: transparent;
+
 }
 
 #map-ui > h3{
