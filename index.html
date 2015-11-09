@@ -33,7 +33,7 @@
     <div class='container-fluid'><!-- Creates Container -->
         
 
-        <div class="navbar navbar-inverse navbar-static-top"> <!--Creates Navbar -->
+        <div class="navbar navbar-inverse navbar-static-top visible-xs-block"> <!--Creates Navbar -->
             <div class="container"> <!--can also be "container-fluid" for a different width-->
                 <div class="navbar-header">
                     <div class="navbar-brand">
@@ -64,27 +64,37 @@
 
 
 
-                <div id='map-ui' class='col-xs-3 col-md-1' style='padding: 0px'><!--Creates Map UI-->
-
-                  <h3>Erosion Scores</h3>
-
-                    <div class="btn-group-vertical ErosionScoreButton" id='NationScore'>
-                   
-                    </div>
-
-                    <div class="btn-group-veritical ErosionScoreButton" role="group">
-                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        By Watershed
-                        <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" id='WatershedList'>
+                <div id='map-ui' class='col-xs-3 col-md-2' style='padding: 0px'><!--Creates Map UI-->
+                        <ul class="nav nav-tabs">
+                          <li class="active">
+                            <a data-toggle="tab" href="#js-tab-pane1" aria-expanded="false">Erosion Score</a>
+                          </li>
+                          <li class="">
+                            <a data-toggle="tab" href="#js-tab-pane2" aria-expanded="true">Other Layers</a>
+                          </li>
                         </ul>
-                        </div>
-                        
-                    <h3>Other Datalayers</h3>
+                        <div class="tab-content col-md-10">
+                          <div class="tab-pane active" id="js-tab-pane1">
+                            <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
+
+                            <div class="btn-group-veritical ErosionScoreButton" role="group">
+                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                By Watershed
+                                <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" id='WatershedList'>
+                                </ul>
+                            </div>
+                          </div>
+                          <div class="tab-pane" id="js-tab-pane2">
                     <div class="btn-group-vertical" id='layerControls'>
                    
                     </div>
+                          </div>
+                        </div>
+
+                        
+                   
                 
                     </div>
 
