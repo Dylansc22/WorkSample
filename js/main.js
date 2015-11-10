@@ -311,10 +311,10 @@ function addLayer_primary(layer, name, zIndex) {
 
 // ADD LAYER CONTROLLER
 var ui = document.getElementById('layerControls');
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 3);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 4)
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 5);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 7);
 
 var ui = document.getElementById('NationScore');
 addLayer_primary(ernationVAR, 'By Nation', 1);
@@ -328,6 +328,9 @@ addLayer(AUBasinVAR, 'Austrailia', 1);
 addLayer(EUBasinVAR, 'Europe', 1);
 addLayer(OCBasinVAR, 'Oceania', 1);
 
+var ui = document.getElementById('baseLayers');
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.849bb91b/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Boundaries', 99);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.825da50a/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Labels', 99);
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
@@ -375,14 +378,6 @@ document.getElementById('Globe').onclick = function() {
   }, 3);
   return false;
 };
-
-/*document.getElementById('chittenden').onclick = function() {
-  map.setView({
-    lat: 15,
-    lon: -5.052
-  }, 10);
-  return false;
-};*/
 
 
 

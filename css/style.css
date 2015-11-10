@@ -51,7 +51,7 @@ p, div {
 
 #map-ui > div {
   padding:15px;
-  border: 2px solid gray;
+
   background: rgba(0,0,0,0.3);
 }
 
@@ -84,6 +84,11 @@ p, div {
 .nav-tabs>li>a:hover {
   border-color: #000000;
   background-color: #111111;
+}
+
+.social {
+  position: relative;
+  z-index: 3;
 }
 
 
@@ -159,6 +164,13 @@ width:100%;
 
 
 #layerControls {
+  position: relative;
+  z-index: 2;
+  color: black;
+  width:100%;
+}
+
+#baseLayers {
   position: relative;
   z-index: 2;
   color: black;
@@ -396,6 +408,8 @@ input[type="radio"] {
 }
 
 
+
+
 /*End of Part of CREATE STATIC LEGEND functionality*/
 
 
@@ -403,8 +417,28 @@ input[type="radio"] {
        TESTING NEW STUFF 
 ---------------------------- */
 
-/*
------ TRING TO CREATE BETTER INTERACTIVE BUTTONS -----
-*/
+.chart rect {
+  fill: blue;
+}
 
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis text {
+    fill: black;
+}
 

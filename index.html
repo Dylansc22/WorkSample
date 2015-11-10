@@ -22,8 +22,9 @@
         <!-- Google Fonts (from https://www.google.com/fonts )-->
         <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
             <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
-            <!-- d3 libaries -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+        <!-- d3 libaries -->
+        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -64,39 +65,48 @@
 
 
 
-                <div id='map-ui' class='col-xs-3 col-md-2' style='padding: 0px'><!--Creates Map UI-->
-                        <ul class="nav nav-tabs">
-                          <li class="active">
-                            <a data-toggle="tab" href="#js-tab-pane1" aria-expanded="false">Erosion Score</a>
-                          </li>
-                          <li class="">
-                            <a data-toggle="tab" href="#js-tab-pane2" aria-expanded="true">Other Layers</a>
-                          </li>
-                        </ul>
-                        <div class="tab-content col-md-10">
-                          <div class="tab-pane active" id="js-tab-pane1">
-                            <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
+    <div id='map-ui' class='col-xs-3 col-md-2' style='padding: 0px'><!--Creates Map UI-->
+        <ul class="nav nav-tabs">
+        <li class="active">
+        <a data-toggle="tab" href="#js-tab-pane1" aria-expanded="false">Erosion Score</a>
+        </li>
+        <li class="">
+        <a data-toggle="tab" href="#js-tab-pane2" aria-expanded="true">Other Layers</a>
+        </li>
+        <li class="">
+        <a data-toggle="tab" href="#js-tab-pane3" aria-expanded="true">Baselayers</a>
+        </li>
+        </ul>
+    
+    <div class="tab-content col-md-10">
+    <div class="tab-pane active" id="js-tab-pane1">
+    <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
 
-                            <div class="btn-group-veritical ErosionScoreButton" role="group">
-                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                By Watershed
-                                <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" id='WatershedList'>
-                                </ul>
-                            </div>
-                          </div>
-                          <div class="tab-pane" id="js-tab-pane2">
-                    <div class="btn-group-vertical" id='layerControls'>
-                   
-                    </div>
-                          </div>
-                        </div>
+    <div class="btn-group-veritical ErosionScoreButton" role="group">
+    <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    By Watershed
+    <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" id='WatershedList'>
+    </ul>
+    </div>
+    </div>
+    <div class="tab-pane" id="js-tab-pane2">
+    <div class="btn-group-vertical" id='layerControls'>
 
-                        
-                   
-                
-                    </div>
+    </div>
+    </div>
+    <div class="tab-pane" id="js-tab-pane3">
+    <div class="btn-group-vertical" id='baseLayers'>
+
+    </div>
+    </div>
+    </div>
+
+
+
+
+    </div><!--Creates Map-UI--> 
 
 
                
@@ -105,15 +115,25 @@
 
 
 
-                    </div><!--Creates Map--> 
-
+                    </div>
 
                 </div><!-- Creates Map -->
+
                 </div>
     <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
     <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
     But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
-            </div><!-- Creates Container -->
+<h1>TESTING</h1>
+<ul class="social">
+
+         
+            <li><a href="https://www.linkedin.com/pub/francis-polignano/78/997/485/"><i class="fa fa-linkedin fa-2x"></i></a></li>
+            <li><a href="https://github.com/fpolig01"><i class="fa fa-github fa-2x"></i> </a></li>
+            <li><a href="https://twitter.com/franchyze922"><i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/franpolignano"><i class="fa fa-facebook fa-2x"></i></a></li>
+          
+            
+        </ul>
 </body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -123,6 +143,7 @@
         <script>// This webmap refers to a div element with the ID: 'mapid'
                     var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
                     var map = L.map('mapid', {zoomControl: false, minZoom:2, }).setView([27, -15], 3); //set initial view to entire world view
+                    
                     new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
                         //id: 'mapbox.light',   << alternative map baselayer
@@ -130,9 +151,6 @@
                         //id: 'dylanc.61e6f75f', < 2nd alternative map baselayer
                         id: 'dylanc.e2755890',
                     }).addTo(map).setZIndex(0);
-                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
-                        id: 'dylanc.825da50a',
-                    }).addTo(map).setZIndex(999);
         </script>
         <!-- I think having this at the bottom increase load speeds -->
         <script src="js/main.js"></script>
