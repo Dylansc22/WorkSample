@@ -31,39 +31,46 @@
 
         </head>
 <body>
-    <div class='container-fluid'><!-- Creates Container -->
-        
+<div class='container-fluid'><!-- Creates Container -->
+    
+<!--CREATES NAVBAR-->
+<!--CREATES NAVBAR-->
+<!--CREATES NAVBAR-->
+<div class="navbar navbar-inverse navbar-static-top visible-xs-block"> <!--Creates Navbar -->
 
-        <div class="navbar navbar-inverse navbar-static-top visible-xs-block"> <!--Creates Navbar -->
-            <div class="container"> <!--can also be "container-fluid" for a different width-->
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        Dylan Scott Cobean Worksample
-                    </div>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse navHeaderCollapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Data</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> <!--Creates Navbar -->
-        <div class="row-fluid">
-        <div id='mapid'><!-- Creates Map -->
-
-                    <!--<div class='testing col-md-4'><h2>Dylan Scott Cobean Worksample</h2><h3 style='padding-left: 10px'>DRAFT DATA - NOT FOR PUBLIC DISTRIBUTION</h3></div>-->
-            
-            <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div> <!--Creates Globe Zoom Control -->
+<div class="container"> <!--remember, this can also be "container-fluid" for a different width-->
+    <div class="navbar-header">
+        <div class="navbar-brand">
+            Dylan Scott Cobean Worksample
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".   navHeaderCollapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse navHeaderCollapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Data</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</div>
+</div> <!--Creates Navbar -->
+<!--END CREATES NAVBAR-->
+<!--END CREATES NAVBAR-->
+<!--END CREATES NAVBAR-->
 
 
+<!--CREATES MAP-->
+<!--CREATES MAP-->
+<!--CREATES MAP-->
+<div class="row-fluid"><!-- Creates Row-fluid -->
+<div id='mapid'><!-- Creates Map -->
+
+    <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div> <!--Creates Globe Zoom Control -->
 
     <div id='map-ui' class='col-xs-3 col-md-2' style='padding: 0px'><!--Creates Map UI-->
         <ul class="nav nav-tabs">
@@ -77,63 +84,41 @@
         <a data-toggle="tab" href="#js-tab-pane3" aria-expanded="true">Baselayers</a>
         </li>
         </ul>
-    
-    <div class="tab-content col-md-10">
-    <div class="tab-pane active" id="js-tab-pane1">
-    <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
 
-    <div class="btn-group-veritical ErosionScoreButton" role="group">
-    <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    By Watershed
-    <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" id='WatershedList'>
-    </ul>
-    </div>
-    </div>
-    <div class="tab-pane" id="js-tab-pane2">
-    <div class="btn-group-vertical" id='layerControls'>
+        <div class="tab-content col-md-10">
+        <div class="tab-pane active" id="js-tab-pane1">
+        <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
 
-    </div>
-    </div>
-    <div class="tab-pane" id="js-tab-pane3">
-    <div class="btn-group-vertical" id='baseLayers'>
+        <div class="btn-group-veritical ErosionScoreButton" role="group">
+        <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        By Watershed
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" id='WatershedList'></ul></div></div>
+        <div class="tab-pane" id="js-tab-pane2">
+        <div class="btn-group-vertical" id='layerControls'></div>
+        </div>
+        <div class="tab-pane" id="js-tab-pane3">
+        <div class="btn-group-vertical" id='baseLayers'></div></div></div>
+    </div><!--END Creates Map-UI-->
+</div><!-- END Creates Map -->
+</div><!-- END Row-fluid -->
+</div><!-- END Container-fluid -->
 
-    </div>
-    </div>
-    </div>
-
-
-
-
-    </div><!--Creates Map-UI--> 
-
-
-               
-                    
-
-
-
-
-                    </div>
-
-                </div><!-- Creates Map -->
-
-                </div>
-    <!--<div class="leaflet-bottom leaflet-left"><div class="info leaflet-control">Hover over a state</div></div>-->
-    <!--This chunk of code is not needed in the html file, as the Zoom-in/Zoom-out buttons are default coded in leaflet & mapbox.
-    But I wanted to customize my Zoom Controller to have a 3rd button which default zooms to the entire globe. -->
+<!-- 
+********************************************************************************
+THIS CODE IS TO IMPLEMENT MY SOCIAL LINKS (GITHUB, LINKEDIN, FACEBOOK, TWITTER)
+IT IS CURRENTLY NOT FUNCTIONAL, AND MAY HAVE TO DO WITH LAZY POORLY IMPLIMENTED CSS
+********************************************************************************
 <h1>TESTING</h1>
 <ul class="social">
+<li><a href="https://www.linkedin.com/pub/francis-polignano/78/997/485/"><i class="fa fa-linkedin fa-2x"></i></a></li>
+<li><a href="https://github.com/fpolig01"><i class="fa fa-github fa-2x"></i> </a></li>
+<li><a href="https://twitter.com/franchyze922"><i class="fa fa-twitter fa-2x"></i></a></li>
+<li><a href="https://www.facebook.com/franpolignano"><i class="fa fa-facebook fa-2x"></i></a></li>
+</ul>
+-->
 
-         
-            <li><a href="https://www.linkedin.com/pub/francis-polignano/78/997/485/"><i class="fa fa-linkedin fa-2x"></i></a></li>
-            <li><a href="https://github.com/fpolig01"><i class="fa fa-github fa-2x"></i> </a></li>
-            <li><a href="https://twitter.com/franchyze922"><i class="fa fa-twitter fa-2x"></i></a></li>
-            <li><a href="https://www.facebook.com/franpolignano"><i class="fa fa-facebook fa-2x"></i></a></li>
-          
-            
-        </ul>
 </body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
