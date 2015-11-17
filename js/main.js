@@ -1,7 +1,9 @@
-
+//this should remove the 'focus' on a button after a click, so you no longer need to click elsewhere on a page to 'unfocus' from the button. 
+//Since focused buttons have their own color, I found that to be kind of distracting, so this code removes that.
 $(".btn").mouseup(function(){
     $(this).blur();
 })
+
 
 //Set color pallet for each nation's erosion risk score
 function getMyColor(d) {   
@@ -14,6 +16,9 @@ function getMyColor(d) {
         '#ffff80';
 }
 
+//Sets color pallet for each hydrologic watershed.
+//I should make one 'getMyColor' for each nation, and calculate the appropriate divisions by quantile.
+//Currently all hydrologic watersheds colors are calculated by this equation
 function getMyColor2(d) {   
   return d > 4 ? '#6b0000' : 
         d > 3 ? '#872a08' : 
