@@ -320,6 +320,8 @@ addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestConditio
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 4)
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 5);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.LandUseIntensity/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Land Use Intensity', 6);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.grunoff_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
 
 var ui = document.getElementById('NationScore');
 addLayer_primary(ernationVAR, 'By Nation', 1);
