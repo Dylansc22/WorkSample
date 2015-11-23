@@ -386,7 +386,6 @@ document.getElementById('Globe').onclick = function() {
   return false;
 };
 
-L.control.attribution( "bottomright");
 
 
 // map.legendControl.addLegend(document.getElementById('legend').innerHTML); 
