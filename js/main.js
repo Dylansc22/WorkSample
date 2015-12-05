@@ -322,9 +322,9 @@ addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.LandUseIntensity/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Land Use Intensity', 6);
 addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.grunoff_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.AdjSlope_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.glhymps_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.porosity_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.AdjSlope_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'High Slope Lands', 6);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.glhymps_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Permeability', 6);
+addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.porosity_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Porosity', 6);
 
 var ui = document.getElementById('NationScore');
 addLayer_primary(ernationVAR, 'By Nation', 1);
