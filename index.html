@@ -58,9 +58,86 @@
 
 <div id='mapid'><!-- Creates Map -->
 
-    <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div> <!--Creates Globe Zoom Control -->
+<div class="panel-group col-xs-3" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h2 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Forests Responsible for Mitigating Sedimentation Risk <br>
+          <h4>A Worksample by Dylan Scott Cobean<h4>
+        </a>
+      </h2>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h2 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Data Layers
+        </a>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+            <div id='oldmap-ui' class='col-xs-12 col-md-12'>
+                <div container-fluid> <!--This container fluid (and the col-xs-4 in the three ul elements below ensures that the three bootstrap tabs span across the entire width of the map-ui window-->
+                <ul class="nav nav-tabs col-xs-12">
+                    <li class="active col-xs-4">
+                        <a data-toggle="tab" href="#js-tab-pane1" aria-expanded="false">Erosion Score</a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#js-tab-pane2" aria-expanded="true">Other Layers</a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#js-tab-pane3" aria-expanded="true">Baselayers</a>
+                    </li>
+                </ul> 
+                <div class="tab-content col-md-12">
+        <div class="tab-pane active" id="js-tab-pane1">
+    <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
 
-    <div id='map-ui' class='col-xs-3 col-md-2' style='padding: 0px'><!--Creates Map UI-->
+                <div class="btn-group-veritical ErosionScoreButton" role="group">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                By Watershed
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id='WatershedList'></ul></div></div>
+                <div class="tab-pane" id="js-tab-pane2">
+                <div class="btn-group-vertical" id='layerControls'></div>
+                </div>
+                <div class="tab-pane" id="js-tab-pane3">
+                <div class="btn-group-vertical" id='baseLayers'></div></div></div>
+                </div>
+
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h2 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h2>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div> <!--Creates Globe Zoom Control -->
+<!--
+    <div id='oldmap-ui' class='col-xs-3 col-md-2' style='padding: 0px'>
         <ul class="nav nav-tabs">
         <li class="active">
         <a data-toggle="tab" href="#js-tab-pane1" aria-expanded="false">Erosion Score</a>
@@ -88,10 +165,10 @@
         </div>
         <div class="tab-pane" id="js-tab-pane3">
         <div class="btn-group-vertical" id='baseLayers'></div></div></div>
-    </div><!--END Creates Map-UI-->
-</div><!-- END Creates Map -->
-</div><!-- END Row-fluid -->
-</div><!-- END Container-fluid -->
+    </div>
+</div>
+</div>
+</div> -->
 
 <!-- 
 ********************************************************************************

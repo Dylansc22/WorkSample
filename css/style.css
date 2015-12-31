@@ -27,6 +27,8 @@ p, div {
     BOOTSTRAP BUTTON CSS 
 ---------------------------- */
 
+
+
 .btn {
     padding: 14px 24px;
     border: 0 none;
@@ -64,7 +66,7 @@ p, div {
 
 /* Map */
 #mapid {
-    position: fixed;
+    position: relative;
     height: 100%;
     width: 100%;
     font-family: 'Fjalla One', sans-serif;
@@ -72,11 +74,36 @@ p, div {
 }
 
 /* Map UI Stuff */
-#map-ui {
+#map-ui{
+  background: rgba(0,0,0,0.4);
+
+}
+
+#accordion {
+  position: absolute;
+  z-index:1;
+  top: 11px;
+  left:11px;
+  padding:0px;
+  background-color: transparent;
+  color: white;
+}
+
+#accordion>.panel {
+  background-color:transparent;
+}
+.panel-collapse{
+    background: rgba(0,0,0,0.4);
+    color:white;
+}
+
+/*I Should begin to phase out this oldmap-ui css*/
+#oldmap-ui {
   text-align: center;
   position: relative;
   display: block;
-  margin: 10px; 
+  padding:0px;
+  margin:0px;
  /*border-right: 2px solid red;*/
   border-radius: 10px; 
 
@@ -84,10 +111,21 @@ p, div {
   z-index: 2;
 }
 
-#map-ui > div {
-  padding:15px;
 
+
+#oldmap-ui > div {
+  padding:0px;
   background: rgba(0,0,0,0.3);
+}
+
+#oldmap-ui > div:nth-child(1) > ul {
+  border-bottom:0px;
+  padding:0px 0px 10px 0px;
+  margin:0px;
+}
+
+#oldmap-ui > div > ul > li {
+  padding: 0px;
 }
 
 .navbar.navbar-inverse.navbar-static-top {
@@ -96,8 +134,12 @@ p, div {
   margin-bottom: 0px;
 }
 
-#map-ui > ul {
-  border-bottom:0px;
+#oldmap-ui > div > div {
+  padding:5px 10px;
+}
+
+.panel-default>.panel-heading {
+  background: rgba(0,0,0,.8);
 }
 
 
@@ -184,14 +226,13 @@ width:100%;
 
 #WatershedList {
   padding: 0px;
-  margin: 0 0 15px 0;;
   position: relative;
   text-align: center;
   background-color: transparent;
 
 }
 
-#map-ui > h3{
+#oldmap-ui > h3{
   padding-top: 40px;
 }
 
@@ -217,11 +258,12 @@ width:100%;
 positioning and adjusting the
 actual globe's default color */
 
-#GlobeButtonBox {
-  z-index: 1;
-  float:right;            
-  margin-right:11px;
-  margin-top:70px;
+#GlobeButtonBox 
+{ 
+  z-index: 1;           
+  position: absolute;
+  right:11px;
+  top:70px;
 }
 
 #Globe {
@@ -284,8 +326,8 @@ and the globe is correctly spaced. */
 }
 
 .leaflet-bottom { 
-  z-index:1;        /*While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the map-ui buttons. 
-                    Otherwise when viewed on mobile, the info screen will be in front of the map-ui buttons and you cannot press them */
+  z-index:1;        /*While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the oldmap-ui buttons. 
+                    Otherwise when viewed on mobile, the info screen will be in front of the oldmap-ui buttons and you cannot press them */
 }
 
 .propsformat {
@@ -336,12 +378,6 @@ and the globe is correctly spaced. */
   color:black;
 }
 
-.leaflet-container a {
-  color: black;
-}
-.leaflet-container a:hover {
-  color:gray;
-}
 
 
 
