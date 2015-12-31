@@ -246,11 +246,21 @@ width:100%;
   width:100%;
 }
 
+#layerControls > a {
+  color:white;
+}
+
+
+
 #baseLayers {
   position: relative;
   z-index: 2;
   color: black;
   width:100%;
+}
+
+#baseLayers > a {
+  color:white;
 }
 
 /*

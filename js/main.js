@@ -316,16 +316,16 @@ function addLayer_primary(layer, name, zIndex) {
 
 // ADD LAYER CONTROLLER
 var ui = document.getElementById('layerControls');
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 3);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 4)
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 3);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 4)
 $('#layerControls div:nth-child(2)').addClass( "active" );
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 5);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.LandUseIntensity/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Land Use Intensity', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.grunoff_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.AdjSlope_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'High Slope Lands', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.glhymps_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Permeability', 6);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.porosity_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Porosity', 6);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 5);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.LandUseIntensity/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Land Use Intensity', 6);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.grunoff_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.AdjSlope_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'High Slope Lands', 6);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.glhymps_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Permeability', 6);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.porosity_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Porosity', 6);
 
 var ui = document.getElementById('NationScore');
 addLayer_primary(ernationVAR, 'By Nation', 1);
@@ -340,8 +340,8 @@ addLayer(EUBasinVAR, 'Europe', 1);
 addLayer(OCBasinVAR, 'Oceania', 1);
 
 var ui = document.getElementById('baseLayers');
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.849bb91b/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Boundaries', 99);
-addLayer(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.825da50a/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Labels', 99);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.849bb91b/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Boundaries', 99);
+addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.825da50a/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Labels', 99);
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
