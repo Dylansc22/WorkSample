@@ -111,7 +111,7 @@ function resetHighlight2(e) {
 
 //LISTENER: Zoom to Layer
 function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
+    map.fitBounds(e.target.getBounds(), {paddingTopLeft: [300,0]});
 }
 
 //Now we’ll use the onEachFeature option to add the listeners on our state layers:
