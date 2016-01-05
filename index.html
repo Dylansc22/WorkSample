@@ -14,8 +14,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
         <!-- Mapbox Css and Js Libraries-->
-        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
 
         <!--Awesome Fonts Library-->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -33,32 +33,63 @@
 <body>
     
 
-<div class="navbar navbar-inverse navbar-static-top visible-xs-block"> <!--Creates Navbar. The visible-xs-block is what makes it only visiable on mobile devices. -->
-<div class="container"> <!--remember, this can also be "container-fluid" for a different width-->
+<nav id="mobilenavbar" class="navbar navbar-inverse navbar-fixed-top visible-xs">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <div class="navbar-brand">
-            by Dylan Scott 
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">By Dylan Scott</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".   navHeaderCollapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-    </div>
-    <div class="collapse navbar-collapse navHeaderCollapse">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Data</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </div>
-</div>
-</div> <!--Creates Navbar -->
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
 
 <div id='mapid'><!-- Creates Map -->
 
-<div class="panel-group col-xs-3" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group col-xs-3 hidden-xs" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h2 class="panel-title">
@@ -102,7 +133,7 @@
                         <a data-toggle="tab" href="#js-tab-pane2" aria-expanded="true">Other Layers</a>
                     </li>
                     <li class="col-xs-4">
-                        <a data-toggle="tab" href="#js-tab-pane3" aria-expanded="true">Baselayers</a>
+                        <a data-toggle="tab" href="#js-tab-pane3" aria-expanded="true">Baselayers<p>     </a>
                     </li>
                 </ul> 
                 <div class="tab-content col-md-12">
@@ -221,7 +252,6 @@ IT IS CURRENTLY NOT FUNCTIONAL, AND MAY HAVE TO DO WITH LAZY POORLY IMPLIMENTED 
                     var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
                     var map = L.map('mapid', {zoomControl: false, minZoom:2, attributionControl: false}).setView([27, -15], 3); //set initial view to entire world view
                     
-                    new L.Control.Zoom({ position: 'topright' }).addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
                         //id: 'mapbox.light',   << alternative map baselayer
                         //id: 'mapbox.dark',
@@ -229,11 +259,24 @@ IT IS CURRENTLY NOT FUNCTIONAL, AND MAY HAVE TO DO WITH LAZY POORLY IMPLIMENTED 
                         id: 'dylanc.e2755890',
                     }).addTo(map).setZIndex(0);
 
-                    L.control.attribution({ position: 'bottomleft', }).addTo(map)
+
+
+                    var custom_zoom = new L.Control.Zoom({ position: 'topright' });
+                    custom_zoom.addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
+
+                    var custom_attribution = new L.control.attribution({ position: 'bottomleft', })
                         .setPrefix("<b>By Dylan Scott Cobean</b>")
                         .addAttribution("Supported by <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox</a>")
                         .addAttribution("<a href='https://www.leaflet.js' target='_blank'>Leaflet</a>")
-                        .addAttribution("<a href='https://www.wri.org' target='_blank'>WRI</a>")        
+                        .addAttribution("<a href='https://www.wri.org' target='_blank'>WRI</a>");
+                    custom_attribution.addTo(map);
+
+                    var custom_geocoder = new L.mapbox.geocoderControl('mapbox.places', {
+                    autocomplete: true,
+                    position: 'topright',
+                    keepOpen: true,
+                    }); 
+                    custom_geocoder.addTo(map);       
 
         </script>
         <!-- I think having this at the bottom increase load speeds -->
