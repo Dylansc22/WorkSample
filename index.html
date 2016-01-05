@@ -246,37 +246,39 @@ IT IS CURRENTLY NOT FUNCTIONAL, AND MAY HAVE TO DO WITH LAZY POORLY IMPLIMENTED 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
         <script>// This webmap refers to a div element with the ID: 'mapid'
-                    var mapboxAccessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-                    var map = L.map('mapid', {zoomControl: false, minZoom:2, attributionControl: false}).setView([27, -15], 3); //set initial view to entire world view
-                    
-                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ', {
-                        //id: 'mapbox.light',   << alternative map baselayer
-                        //id: 'mapbox.dark',
-                        //id: 'dylanc.61e6f75f', < 2nd alternative map baselayer
-                        id: 'dylanc.e2755890',
-                    }).addTo(map).setZIndex(0);
+            L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
+            var map = L.mapbox.map('mapid', 'dylanc.e2755890', {
+                zoomControl: false, 
+                minZoom:2, 
+                attributionControl: false,
+            })
+                map.addControl(L.mapbox.geocoderControl('mapbox.places', {
+                    autocomplete: true,
+                    position: 'topright',
+                    keepOpen: false,
+                }));
+                map.setView([27, -15], 3);
 
-
-
-                    var custom_zoom = new L.Control.Zoom({ position: 'topright' });
+                var custom_zoom = new L.Control.Zoom({ position: 'topright' });
                     custom_zoom.addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
 
-                    var custom_attribution = new L.control.attribution({ position: 'bottomleft', })
+                var custom_attribution = new L.control.attribution({ position: 'bottomright', })
                         .setPrefix("<b>By Dylan Scott Cobean</b>")
                         .addAttribution("Supported by <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox</a>")
                         .addAttribution("<a href='https://www.leaflet.js' target='_blank'>Leaflet</a>")
                         .addAttribution("<a href='https://www.wri.org' target='_blank'>WRI</a>");
                     custom_attribution.addTo(map);
 
-                    var custom_geocoder = new L.mapbox.geocoderControl('mapbox.places', {
+                    /*var custom_geocoder = L.mapbox.geocoderControl('mapbox.places', {
                     autocomplete: true,
                     position: 'topright',
                     keepOpen: true,
+                    accessToken: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'
                     }); 
-                    custom_geocoder.addTo(map);       
+                    custom_geocoder.addTo(map); */      
 
         </script>
         <!-- I think having this at the bottom increase load speeds -->

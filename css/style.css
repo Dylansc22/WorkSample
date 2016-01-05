@@ -337,6 +337,11 @@ actual globe's default color */
 }
 
 
+.leaflet-bottom { 
+  z-index:1;        /*While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the oldmap-ui buttons. 
+                    Otherwise when viewed on mobile, the info screen will be in front of the oldmap-ui buttons and you cannot press them */
+}
+
 .propsformat {
   font-size: 20px;
   line-height: 35px;
@@ -344,19 +349,6 @@ actual globe's default color */
   margin: 10px;
   display: inline;
   text-align: right;
-}
-
-
-/*
-.leaflet-bar {
-  color: white;
-/*border-bottom-width: 0px; /*Part of the Custom Zoom Controller - This makes sure the spacing between the '-' Zoom Out Symbol
-and the globe is correctly spaced. 
-}
-
-.leaflet-bottom { 
-  z-index:1;        While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the oldmap-ui buttons. 
-                    Otherwise when viewed on mobile, the info screen will be in front of the oldmap-ui buttons and you cannot press them 
 }
 
 .leaflet-container h1 {
@@ -404,17 +396,6 @@ and the globe is correctly spaced.
   z-index:1;
 }
 
-.leaflet-top-pane {
-      pointer-events: none;
-    }
-
-.leaflet-scale-control {
-  position:relative;
-  z-index: 3;
-  background-color: red;
-}
-*/
-
 #layerControls {
   color:black;
 }
@@ -435,6 +416,15 @@ and the globe is correctly spaced.
 }
 
 
+.leaflet-top-pane {
+      pointer-events: none;
+    }
+
+.leaflet-scale-control {
+  position:relative;
+  z-index: 3;
+  background-color: red;
+}
 
 #ra-container {
   transition: transform 0.5s;

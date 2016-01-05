@@ -316,16 +316,16 @@ function addLayer_primary(layer, name, zIndex) {
 
 // ADD LAYER CONTROLLER
 var ui = document.getElementById('layerControls');
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.CurrentForestCondition/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Current Forest Condition', 3);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.ErosionRisk/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ').addTo(map), 'Erosion Risk (1km)', 4)
-$('#layerControls div:nth-child(2)').addClass( "active" );
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Conservation/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Conservation', 5);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.Restoration/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Priority Restoration', 6);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.LandUseIntensity/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Land Use Intensity', 6);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.grunoff_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Global Runoff', 6);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.AdjSlope_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'High Slope Lands', 6);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.glhymps_r10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Permeability', 6);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.porosity_n10/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Porosity', 6);
+addLayer_primary(L.mapbox.tileLayer('dylanc.CurrentForestCondition', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Current Forest Condition', 3);
+addLayer_primary(L.mapbox.tileLayer('dylanc.ErosionRisk', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}).addTo(map), 'Erosion Risk', 3);
+//$('#layerControls div:nth-child(2)').addClass( "active" );
+addLayer_primary(L.mapbox.tileLayer('dylanc.Conservation', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Priority Conservation', 5);
+addLayer_primary(L.mapbox.tileLayer('dylanc.Restoration', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Priority Restoration', 6);
+addLayer_primary(L.mapbox.tileLayer('dylanc.LandUseIntensity', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Land Use Intensity', 6);
+addLayer_primary(L.mapbox.tileLayer('dylanc.grunoff_n10', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Global Runoff', 6);
+addLayer_primary(L.mapbox.tileLayer('dylanc.AdjSlope_r10', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'High Slope Lands', 6);
+addLayer_primary(L.mapbox.tileLayer('dylanc.glhymps_r10', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Permeability', 6);
+addLayer_primary(L.mapbox.tileLayer('dylanc.porosity_n10', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Porosity', 6);
 
 var ui = document.getElementById('NationScore');
 addLayer_primary(ernationVAR, 'By Nation', 1);
@@ -340,13 +340,13 @@ addLayer(EUBasinVAR, 'Europe', 1);
 addLayer(OCBasinVAR, 'Oceania', 1);
 
 var ui = document.getElementById('baseLayers');
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.849bb91b/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Boundaries', 99);
-addLayer_primary(L.tileLayer('https://a.tiles.mapbox.com/v4/dylanc.825da50a/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'), 'Admin Labels', 99);
+addLayer_primary(L.mapbox.tileLayer('dylanc.849bb91b', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Admin Boundaries', 99);
+addLayer_primary(L.mapbox.tileLayer('dylanc.825da50a', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Admin Labels', 99);
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
 //addLayer(L.mapbox.tileLayer('landplanner.hm1kg9l2'), 'Building Footprints', 6);
-//addLayer(L.tileLayer('https://s3.amazonaws.com/geosprocket/tiles/btv1894-5/{z}/{x}/{y}.png'), 'Selected 1894 Sanborn Maps', 4);
+//addLayer(L.mapbox.tileLayer('https://s3.amazonaws.com/geosprocket/tiles/btv1894-5/{z}/{x}/{y}.png'), 'Selected 1894 Sanborn Maps', 4);
 
 /* ADD THE REFERENCE OVERLAY
 var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
