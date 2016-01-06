@@ -557,3 +557,9 @@ input[type="radio"] {
       .social-em:hover {
         color: #f39c12;
       }
+
+.tesingclass > li > a {
+  min-height:60px;
+  vertical-align: middle;
+  height:100%;
+}
