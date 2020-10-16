@@ -1,64 +1,71 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    font-size: 100%;
-    position: relative;
-    overflow: hidden;
-    font-family: 'Fjalla One', sans-serif;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: "Fjalla One", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Corben', Georgia, Times, serif;
-    color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Corben", Georgia, Times, serif;
+  color: white;
 }
-p, div {
-    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+p,
+div {
+  font-family: "Nobile", Helvetica, Arial, sans-serif;
 }
 
 .container-fluid {
-  height:100%;
+  height: 100%;
 }
-.col-centered{
-    float: none;
-    margin: 0 auto;
+.col-centered {
+  float: none;
+  margin: 0 auto;
 }
-
 
 /* ---------------------------
     BOOTSTRAP BUTTON CSS 
 ---------------------------- */
 
-
-
 .btn {
-    padding: 14px 24px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
- 
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: 0 none;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #000000;
-    border-color: #666666;
+  color: #fff;
+  background-color: #000000;
+  border-color: #666666;
 }
- 
+
 .btn-primary:hover, /*.btn-primary:focus,*/ .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
+  background: #33a6cc;
 }
- 
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
-    box-shadow: none;
+
+.btn-primary:active,
+.btn-primary.active {
+  background: #007299;
+  box-shadow: none;
 }
 
 .btn.sharp {
-  border-radius:0;
+  border-radius: 0;
 }
 
 /* ---------------------------
@@ -67,35 +74,34 @@ p, div {
 
 /* Map */
 #mapid {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    font-family: 'Fjalla One', sans-serif;
-    z-index: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-family: "Fjalla One", sans-serif;
+  z-index: 0;
 }
 
 /* Map UI Stuff */
-#map-ui{
-  background: rgba(0,0,0,0.4);
-
+#map-ui {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 #accordion {
   position: absolute;
-  z-index:1;
+  z-index: 1;
   top: 11px;
-  left:11px;
-  padding:0px;
+  left: 11px;
+  padding: 0px;
   background-color: transparent;
   color: white;
 }
 
-#accordion>.panel {
-  background-color:transparent;
+#accordion > .panel {
+  background-color: transparent;
 }
-.panel-collapse{
-    background: rgba(0,0,0,0.4);
-    color:white;
+.panel-collapse {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
 }
 
 /*I Should begin to phase out this oldmap-ui css*/
@@ -103,26 +109,24 @@ p, div {
   text-align: center;
   position: relative;
   display: block;
-  padding:0px;
-  margin:0px;
- /*border-right: 2px solid red;*/
-  border-radius: 10px; 
+  padding: 0px;
+  margin: 0px;
+  /*border-right: 2px solid red;*/
+  border-radius: 10px;
 
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   z-index: 2;
 }
 
-
-
 #oldmap-ui > div {
-  padding:0px;
-  background: rgba(0,0,0,0.3);
+  padding: 0px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 #oldmap-ui > div:nth-child(1) > ul {
-  border-bottom:0px;
-  padding:0px 0px 10px 0px;
-  margin:0px;
+  border-bottom: 0px;
+  padding: 0px 0px 10px 0px;
+  margin: 0px;
 }
 
 #oldmap-ui > div > ul > li {
@@ -136,30 +140,31 @@ p, div {
 }
 
 #oldmap-ui > div > div {
-  padding:5px 10px;
+  padding: 5px 10px;
 }
 
-.panel-default>.panel-heading {
-  background: rgba(0,0,0,.8);
+.panel-default > .panel-heading {
+  background: rgba(0, 0, 0, 0.8);
 }
-
 
 /* tab color */
-.nav-tabs>li>a {
-  background-color: #333333; 
+.nav-tabs > li > a {
+  background-color: #333333;
   border-color: #777777;
-  color:#fff;
+  color: #fff;
 }
 
 /* active tab color */
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
   color: #fff;
   background-color: #666;
   border: 1px solid #888888;
 }
 
 /* hover tab color */
-.nav-tabs>li>a:hover {
+.nav-tabs > li > a:hover {
   border-color: #000000;
   background-color: #111111;
 }
@@ -169,59 +174,54 @@ p, div {
   z-index: 3;
 }
 
-
-
-
-
 #branding {
   position: relative;
-    height: 145px;
-    width: 150px;
-    left: 0;
-    float: left;
-    background: url(../img/logo.png) 30px 60px no-repeat;
-    }
+  height: 145px;
+  width: 150px;
+  left: 0;
+  float: left;
+  background: url(../img/logo.png) 30px 60px no-repeat;
+}
 
 #content {
   position: relative;
   height: 200px;
   width: 100%;
   bottom: 0px;
-    background: rgb(255,255,255); /* old ie */
-    background: rgba(255,255,255,.9);
-    border-bottom: 1px solid #ccc;
-    border-top: 5px solid #333;
-    overflow-y: hidden;
-    z-index: 2;
-    }
-    
-#about {
-    margin-left: 150px;
-    width: 689px;
-    float: left;
-    padding: 0 20px;
-    border-left: 1px solid #bbb;
-    }
+  background: rgb(255, 255, 255); /* old ie */
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #ccc;
+  border-top: 5px solid #333;
+  overflow-y: hidden;
+  z-index: 2;
+}
 
+#about {
+  margin-left: 150px;
+  width: 689px;
+  float: left;
+  padding: 0 20px;
+  border-left: 1px solid #bbb;
+}
 
 /* ---------------------------
        UI CSS ELEMENTS 
 ---------------------------- */
 /*Topojson button and dropdown css*/
 .ErosionScoreButton {
-position: relative;
-z-index: 1;
-width:100%;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
-#NationScore > a{
-  color:white;
+#NationScore > a {
+  color: white;
 }
 .btn .btn-primary .dropdown-toggle {
   margin-top: 20px;
 }
 
 #WatershedList .btn {
-  width:100%;
+  width: 100%;
   position: relative;
 }
 
@@ -230,51 +230,43 @@ width:100%;
   position: relative;
   text-align: center;
   background-color: transparent;
-
 }
 
-#oldmap-ui > h3{
+#oldmap-ui > h3 {
   padding-top: 40px;
 }
-
-
-
 
 #layerControls {
   position: relative;
   z-index: 2;
   color: black;
-  width:100%;
+  width: 100%;
 }
 
 #layerControls > a {
-  color:white;
+  color: white;
 }
-
 
 #layerControlsMobile {
   position: relative;
   z-index: 2;
   color: black;
-  width:100%;
+  width: 100%;
 }
 
 #layerControlsMobile > a {
-  color:white;
+  color: white;
 }
-
-
-
 
 #baseLayers {
   position: relative;
   z-index: 2;
   color: black;
-  width:100%;
+  width: 100%;
 }
 
 #baseLayers > a {
-  color:white;
+  color: white;
 }
 
 /*
@@ -282,23 +274,22 @@ width:100%;
 positioning and adjusting the
 actual globe's default color */
 
-#GlobeButtonBox 
-{ 
-  z-index: 1;           
+#GlobeButtonBox {
+  z-index: 1;
   position: relative;
-  right:11px;
-  top:110px;
-  float:right;
+  right: 11px;
+  top: 110px;
+  float: right;
 }
 
 #Globe {
-    color: black;
-    padding: 1px 2px;  
-    border-color: gray;
+  color: black;
+  padding: 1px 2px;
+  border-color: gray;
 }
 
 .leaflet-control-zoom .leaflet-bar .leaflet-control {
-  margin-right:11px;
+  margin-right: 11px;
 }
 
 #infoscreen {
@@ -306,47 +297,45 @@ actual globe's default color */
   margin-bottom: 50px;
 }
 
-
-
-.legend label, .legend span {
-    display: block;
-    float: left;
-    height: 15px;
-    width: 33%;
-    text-align: center;
-    font-size: 10px;
-    color: white;
+.legend label,
+.legend span {
+  display: block;
+  float: left;
+  height: 15px;
+  width: 33%;
+  text-align: center;
+  font-size: 10px;
+  color: white;
 }
 
 .my-legend {
-    display: block;
-    float: right;
-    height: 15px;
-    width: 33%;
-    text-align: center;
-    font-size: 10px;
-    color: white;
+  display: block;
+  float: right;
+  height: 15px;
+  width: 33%;
+  text-align: center;
+  font-size: 10px;
+  color: white;
 }
 .map-legends.wax-legends {
-    background: rgba(30, 30, 30, 0);
+  background: rgba(30, 30, 30, 0);
 }
 
 /*Part of CREATE STATIC LEGEND functionality*/
 .legend {
-    line-height: 18px;
-    color: #555;
+  line-height: 18px;
+  color: #555;
 }
 .legend i {
-    width: 18px;
-    height: 18px;
-    float: left;
-    margin-right: 8px;
-    opacity: 0.7;
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
 }
 
-
-.leaflet-bottom { 
-  z-index:1;        /*While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the oldmap-ui buttons. 
+.leaflet-bottom {
+  z-index: 1; /*While not a longterm solution, this is the needed line of code to force the leaflet info bar BEHIND the oldmap-ui buttons. 
                     Otherwise when viewed on mobile, the info screen will be in front of the oldmap-ui buttons and you cannot press them */
 }
 
@@ -360,73 +349,65 @@ actual globe's default color */
 }
 
 .leaflet-container h1 {
-    color: white;
-    font-size: 50px;
-    line-height: 55px;
-    margin: 5px;
-
+  color: white;
+  font-size: 50px;
+  line-height: 55px;
+  margin: 5px;
 }
 .leaflet-container h2 {
-    color: white;
-    font-size: 30px;
-    line-height: 35px;
-    margin: 5px;
-    display: inline;
+  color: white;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 5px;
+  display: inline;
 }
 
 .leaflet-container h3 {
-    color: white;
-    font-size: 20px;
-    line-height: 25px;
-    margin: 5px;
-    display: inline;
+  color: white;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 5px;
+  display: inline;
 }
-
 
 .leaflet-container h5 {
-    color: white;
-    font-size: 50px;
-    line-height: 55px;
-    margin: 5px;
-    display: inline;
-
+  color: white;
+  font-size: 50px;
+  line-height: 55px;
+  margin: 5px;
+  display: inline;
 }
 .leaflet-container h6 {
-    color: white;
-    font-size: 30px;
-    line-height: 35px;
-    margin: 5px;
-    display: inline;
+  color: white;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 5px;
+  display: inline;
 }
 
 .leaflet-container {
-  position:relative;
-  z-index:1;
+  position: relative;
+  z-index: 1;
 }
-
-
-
-
 
 .info.leaflet-control {
-    font-family:'Fjalla One', sans-serif;
-    color: white;
-    /*border: 2px solid gray;
+  font-family: "Fjalla One", sans-serif;
+  color: white;
+  /*border: 2px solid gray;
     background: rgba(0,0,0,0.4);*/
-    padding: 10px;
-    margin: 10px;
-    z-index:1;
-    text-align: right;
-    /*font: 14px/16px Arial, Helvetica, sans-serif;*/
+  padding: 10px;
+  margin: 10px;
+  z-index: 1;
+  text-align: right;
+  /*font: 14px/16px Arial, Helvetica, sans-serif;*/
 }
 
-
 .leaflet-top-pane {
-      pointer-events: none;
-    }
+  pointer-events: none;
+}
 
 .leaflet-scale-control {
-  position:relative;
+  position: relative;
   z-index: 3;
   background-color: red;
 }
@@ -441,15 +422,15 @@ actual globe's default color */
   -webkit-transition: width 0.5s;
 }
 #ra-headmatter {
-  -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
 #ra-responsivemenu {
   background: #007a4d;
   color: #fff;
 }
 #ra-responsivemenu-btn-l {
-  border-right: rgba(0,0,0,0.3) 1px solid;
+  border-right: rgba(0, 0, 0, 0.3) 1px solid;
 }
 #ra-responsivemenu-header {
   float: right;
@@ -462,7 +443,6 @@ actual globe's default color */
   margin-top: -3px;
   vertical-align: middle;
 }
-
 
 /*.btn:hover { 
     background-color: yellow;
@@ -501,61 +481,62 @@ input[type="radio"] {
   padding: 0;
 }
 
-
-
-
 /*End of Part of CREATE STATIC LEGEND functionality*/
-
 
 /* ---------------------------
        TESTING NEW STUFF 
 ---------------------------- */
 
-
 #footer {
   z-index: 2;
-  bottom:15px;
-  width:100%;
-  position:absolute;
+  bottom: 15px;
+  width: 100%;
+  position: absolute;
 }
 
 #social:hover {
-          -webkit-transform:scale(1.1); 
--moz-transform:scale(1.1); 
--o-transform:scale(1.1); 
-      }
-      #social {
-        -webkit-transform:scale(0.8);
-                /* Browser Variations: */
--moz-transform:scale(0.8);
--o-transform:scale(0.8); 
--webkit-transition-duration: 0.5s; 
--moz-transition-duration: 0.5s;
--o-transition-duration: 0.5s;
-      }           
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+#social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
 /* 
     Only Needed in Multi-Coloured Variation 
                                                */
-      .social-fb, .social-tw, .social-gp, .social-em {
-                color: white;
-                padding:5px;
-
-            }
-            .social-fb:hover {
-        color: #3B5998;
-      }
-      .social-tw:hover {
-        color: #4099FF;
-      }
-      .social-gp:hover {
-        color: #d34836;
-      }
-      .social-em:hover {
-        color: #f39c12;
-      }
+.social-fb,
+.social-tw,
+.social-gp,
+.social-em {
+  color: white;
+  padding: 5px;
+}
+.social-fb:hover {
+  color: #3b5998;
+}
+.social-tw:hover {
+  color: #4099ff;
+}
+.social-gp:hover {
+  color: #d34836;
+}
+.social-em:hover {
+  color: #f39c12;
+}
 
 .tesingclass > li > a {
-  min-height:60px;
+  min-height: 60px;
   vertical-align: middle;
-  height:100%;
+  height: 100%;
+}
+
+#accordion a {
+  color: #337ab7;
 }

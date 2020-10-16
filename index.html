@@ -1,132 +1,246 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dylan's Worksample</title>
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <head>
+    <title>Dylan's Worksample</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
 
-        <!-- Bootstrap Css and Js Libraries - Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Bootstrap Css and Js Libraries - Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+      crossorigin="anonymous"
+    />
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+      integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX"
+      crossorigin="anonymous"
+    />
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+      integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+      crossorigin="anonymous"
+    ></script>
 
-        <!-- Mapbox Css and Js Libraries-->
-        <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-        <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <!-- Mapbox Css and Js Libraries-->
+    <script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
+      rel="stylesheet"
+    />
 
-        <!--Awesome Fonts Library-->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <!-- Google Fonts (from https://www.google.com/fonts )-->
-        <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-            <link href='css/style.css' rel='stylesheet' /> <!-- My Local CSS -->
+    <!--Awesome Fonts Library-->
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts (from https://www.google.com/fonts )-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Fjalla+One"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- My Local CSS -->
 
-        <!-- d3 libaries -->
-        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- d3 libaries -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-        </head>
-<body>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  </head>
+  <body>
     <div container>
-        <div id="footer" class="text-center center-block site-footer">
-            <a href="https://www.linkedin.com/in/dylanscott22" title="Linkedin"><i id="social" class="fa fa-linkedin fa-2x social-fb"></i></a>
-            <a href="https://twitter.com/MrDylanScott" title="Twitter"><i id="social" class="fa fa-twitter fa-2x social-tw"></i></a>
-            <a href="https://github.com/dylansc22" title="Github"><i id="social" class="fa fa-github fa-2x social-gp"></i></a>
-            <a href="mailto:hellodylanscott@gmail.com" title="Email"><i id="social" class="fa fa-envelope fa-2x social-em"></i></a>
-        </div>
-    </div>
-
-
-  <div id='mapid'><!-- Creates Map -->
-
-  <div class="panel-group col-sm-3" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h2 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Mitigating Global Sedimentation Risk with Forest Infrastructure</h2>
-            <p>
-          <h3>A Webmap by Dylan Scott</h3>
-          </a>
-
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-           Infrastructure, or Green Infrastructure, such as forests and wetlands have been shown through research to create massive benefits in some of the most important water management issues. Foresty and Water Management issues have been known to be related, but the public is beginning to better understand how important Forests are in regulating Water Management Issues. <br><br>
-
-          Forests reduce downstream flood risk, improve infiltration rates, and capture sediment that would otherwise be carried downstream. Sedimentation risk in particular can be a factor for Water Treatment Plants and Hydroelectric Power Facilities. <br><br>
-
-          This proof-of-concept worksample, looks at a numbeNaturalr of environmental indicators and calculates an global erosion risk scores (by nation and by watershed). By overlaying that resulting data with WRI's publically available Global Forest Conditions, we can map regions around the global where targeted forest conservation and forest restoration efforts can mitigate risk to watersheds and urban environments. 
-          <br>
-        </div>
+      <div id="footer" class="text-center center-block site-footer">
+        <a href="https://www.linkedin.com/in/dylanscott22" title="Linkedin"
+          ><i id="social" class="fa fa-linkedin fa-2x social-fb"></i
+        ></a>
+        <a href="https://twitter.com/MrDylanScott" title="Twitter"
+          ><i id="social" class="fa fa-twitter fa-2x social-tw"></i
+        ></a>
+        <a href="https://github.com/dylansc22" title="Github"
+          ><i id="social" class="fa fa-github fa-2x social-gp"></i
+        ></a>
+        <a href="mailto:hellodylanscott@gmail.com" title="Email"
+          ><i id="social" class="fa fa-envelope fa-2x social-em"></i
+        ></a>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingTwo">
-        <h2 class="panel-title">
-          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Data Layers
-          </a>
-        </h2>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-        <div class="panel-body">
-              <div id='oldmap-ui' class='col-xs-12 col-md-12'>
-                  <div container-fluid> <!--This container fluid (and the col-xs-4 in the three ul elements below ensures that the three bootstrap tabs span across the entire width of the map-ui window-->
+
+    <div id="mapid">
+      <!-- Creates Map -->
+
+      <div
+        class="panel-group col-sm-3"
+        id="accordion"
+        role="tablist"
+        aria-multiselectable="true"
+      >
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h2 class="panel-title">
+              <a
+                role="button"
+                data-toggle="collapse"
+                data-parent="#accordion"
+                href="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+                >Mitigating Global Sedimentation Risk with Forest Infrastructure
+                <br />
+                <h3>A Webmap by Dylan Scott</h3>
+              </a>
+            </h2>
+          </div>
+          <div
+            id="collapseOne"
+            class="panel-collapse collapse in"
+            role="tabpanel"
+            aria-labelledby="headingOne"
+          >
+            <div class="panel-body">
+              Green Infrastructure, such as forests and wetlands have been shown
+              through research to create massive ecological benefits for various
+              watersheds management issues. Foresty and Water Management are
+              clearly interconnected. However documenting that connection beyond
+              academia and research is sometimes difficult. Conveying that
+              connection between forests and water management issues is critical
+              to creating more environmentally conscious decision making. Some
+              of these Forest-Water Connections include how forests can reduce
+              downstream flood risk, improving regional groundwater
+              infiltration, or capture sediment from erosion (natural and
+              human-caused).
+              <br /><br />
+
+              This proof-of-concept worksample, looks at a a number of natural
+              environmental indicators and calculates an global erosion risk
+              scores (by nation and by watershed). By overlaying that resulting
+              data with WRI's publically available Global Forest Conditions, we
+              can map regions around the global where targeted forest
+              conservation and forest restoration efforts can mitigate risk to
+              watersheds and urban environments.
+              <br />
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h2 class="panel-title">
+              <a
+                class="collapsed"
+                role="button"
+                data-toggle="collapse"
+                data-parent="#accordion"
+                href="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Data Layers
+              </a>
+            </h2>
+          </div>
+          <div
+            id="collapseTwo"
+            class="panel-collapse collapse"
+            role="tabpanel"
+            aria-labelledby="headingTwo"
+          >
+            <div class="panel-body">
+              <div id="oldmap-ui" class="col-xs-12 col-md-12">
+                <div container-fluid>
+                  <!--This container fluid (and the col-xs-4 in the three ul elements below ensures that the three bootstrap tabs span across the entire width of the map-ui window-->
                   <ul class="nav nav-tabs">
-                      <li class="active col-xs-6">
-                          <a data-toggle="tab" href="#js-tab-pane1"><span>Summary Statistics</span></a>
-                      </li>
-                      <li class="col-xs-6">
-                          <a data-toggle="tab" href="#js-tab-pane2"><span>Supplementary Layers</span></a>
-                      </li>
-                      <!-- <li class="col-xs-4">
+                    <li class="active col-xs-6">
+                      <a data-toggle="tab" href="#js-tab-pane1"
+                        ><span>Summary Statistics</span></a
+                      >
+                    </li>
+                    <li class="col-xs-6">
+                      <a data-toggle="tab" href="#js-tab-pane2"
+                        ><span>Supplementary Layers</span></a
+                      >
+                    </li>
+                    <!-- <li class="col-xs-4">
                           <a data-toggle="tab" href="#js-tab-pane3"><span>City/Nation Labels</span></a>
                       </li> -->
-                  </ul> 
+                  </ul>
                   <div class="tab-content col-md-12">
-          <div class="tab-pane active" id="js-tab-pane1">
-      <div class="btn-group-vertical ErosionScoreButton" id='NationScore'></div>
+                    <div class="tab-pane active" id="js-tab-pane1">
+                      <div
+                        class="btn-group-vertical ErosionScoreButton"
+                        id="NationScore"
+                      ></div>
 
-                  <div class="btn-group-veritical ErosionScoreButton" role="group">
-                  <button type="button" class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  By Watershed
-                  <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" id='WatershedList'></ul></div></div>
-                  <div class="tab-pane" id="js-tab-pane2">
-                  <div class="btn-group-vertical" id='layerControls'></div>
+                      <div
+                        class="btn-group-veritical ErosionScoreButton"
+                        role="group"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-sm dropdown-toggle ErosionScoreButton"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          By Watershed
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="WatershedList"></ul>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="js-tab-pane2">
+                      <div class="btn-group-vertical" id="layerControls"></div>
+                    </div>
+                    <div class="tab-pane" id="js-tab-pane3">
+                      <div class="btn-group-vertical" id="baseLayers"></div>
+                    </div>
                   </div>
-                  <div class="tab-pane" id="js-tab-pane3">
-                  <div class="btn-group-vertical" id='baseLayers'></div></div></div>
-                  </div>
-
+                </div>
               </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
-        <h2 class="panel-title">
-          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            About This Project
-          </a>
-        </h2>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-        <div class="panel-body">
-          This Webmap is merely a technical demonstration of my expertise in geospatal analysis and webmapping. All data is merely draft data and subject to change. This is an ongoing project, initially developed in the Summer of 2015. <br><br>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h2 class="panel-title">
+              <a
+                class="collapsed"
+                role="button"
+                data-toggle="collapse"
+                data-parent="#accordion"
+                href="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                About This Project
+              </a>
+            </h2>
+          </div>
+          <div
+            id="collapseThree"
+            class="panel-collapse collapse"
+            role="tabpanel"
+            aria-labelledby="headingThree"
+          >
+            <div class="panel-body">
+              This Webmap is a technical demo illustrating this proof-of-concept
+              web-mapping narrative, technology, and analysis. All data is merely draft data
+              and subject to change. This is an ongoing project, initially
+              developed in the Summer of 2015. <br /><br />
 
-          Best,<br>
-          Dylan Scott<br>
-          January 2016<br>
+              Dylan Scott<br />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-      <!--<div class="panel panel-default">
+        <!--<div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingFour">
         <h2 class="panel-title">
           <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -164,11 +278,17 @@
         </div>
       </div>
     </div>-->
-  </div>
+      </div>
+    </div>
+    <!-- End of Create Map -->
 
-
-      <div class="btn-group" id='GlobeButtonBox'><a class="btn btn-default btn-xs" href="#" id="Globe"><i class="fa fa-globe fa-2x fa-align-center"></i></a></div> <!--Creates Globe Zoom Control -->
-  <!--
+    <div class="btn-group" id="GlobeButtonBox">
+      <a class="btn btn-default btn-xs" href="#" id="Globe"
+        ><i class="fa fa-globe fa-2x fa-align-center"></i
+      ></a>
+    </div>
+    <!--Creates Globe Zoom Control -->
+    <!--
       <div id='oldmap-ui' class='col-xs-3 col-md-2' style='padding: 0px'>
           <ul class="nav nav-tabs">
           <li class="active">
@@ -202,7 +322,7 @@
   </div>
   </div> -->
 
-  <!-- 
+    <!-- 
   ********************************************************************************
   THIS CODE IS TO IMPLEMENT MY SOCIAL LINKS (GITHUB, LINKEDIN, FACEBOOK, TWITTER)
   IT IS CURRENTLY NOT FUNCTIONAL, AND MAY HAVE TO DO WITH LAZY POORLY IMPLIMENTED CSS
@@ -216,40 +336,61 @@
   </ul>
   -->
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
+      rel="stylesheet"
+    />
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <!-- required for using the topojson method/variable/term/thing in my main.js file -->
+    <script>
+      // This webmap refers to a div element with the ID: 'mapid'
+      L.mapbox.accessToken =
+        "pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ";
+      var map = L.mapbox
+        .map("mapid", null, { zoomControl: false })
+        .setView([27, -15], 3)
+        .addLayer(
+          L.mapbox.styleLayer(
+            "mapbox://styles/dylanc/cjt12jorf0iuc1fqr60bz4rvk"
+          )
+        )
+        .addControl(
+          L.mapbox.geocoderControl("mapbox.places", {
+            autocomplete: true,
+            position: "topright",
+            keepOpen: false,
+          })
+        );
 
+      new L.Control.Zoom({ position: "topright" }).addTo(map);
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-          <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />      <script src="https://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
-          <script>// This webmap refers to a div element with the ID: 'mapid'
-              L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-              var map = L.mapbox.map('mapid', null, {zoomControl: false})
-                .setView([27, -15], 3)
-                .addLayer(L.mapbox.styleLayer('mapbox://styles/dylanc/cjt12jorf0iuc1fqr60bz4rvk'))
-                .addControl(L.mapbox.geocoderControl('mapbox.places', {
-                      autocomplete: true,
-                      position: 'topright',
-                      keepOpen: false,
-                  }));
-              
-                  new L.Control.Zoom({ position: 'topright' }).addTo(map);
+      var custom_attribution = new L.control.attribution({
+        position: "bottomright",
+      })
+        .setPrefix("<b>By Dylan Scott</b>")
+        .addAttribution(
+          "Supported by <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox</a>"
+        )
+        .addAttribution(
+          "<a href='https://www.leaflet.js' target='_blank'>Leaflet</a>"
+        )
+        .addAttribution(
+          "<a href='https://www.wri.org' target='_blank'>WRI</a>"
+        );
+      custom_attribution.addTo(map);
 
-                  var custom_attribution = new L.control.attribution({ position: 'bottomright', })
-                          .setPrefix("<b>By Dylan Scott</b>")
-                          .addAttribution("<a href='https://www.wri.org' target='_blank'>WRI</a>");
-                      custom_attribution.addTo(map);
-
-                      /*var custom_geocoder = L.mapbox.geocoderControl('mapbox.places', {
+      /*var custom_geocoder = L.mapbox.geocoderControl('mapbox.places', {
                       autocomplete: true,
                       position: 'topright',
                       keepOpen: true,
                       accessToken: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'
                       }); 
-                      custom_geocoder.addTo(map); */      
-
-          </script>
-          <!-- I think having this at the bottom increase load speeds -->
-          <script src="js/main.js"></script>
-</body>
+                      custom_geocoder.addTo(map); */
+    </script>
+    <!-- I think having this at the bottom increase load speeds -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
