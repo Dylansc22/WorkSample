@@ -339,9 +339,9 @@ addLayer(AUBasinVAR, 'Austrailia', 1);
 addLayer(EUBasinVAR, 'Europe', 1);
 addLayer(OCBasinVAR, 'Oceania', 1);
 
-var ui = document.getElementById('baseLayers');
-addLayer_primary(L.mapbox.tileLayer('dylanc.849bb91b', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Admin Boundaries', 99);
-addLayer_primary(L.mapbox.tileLayer('dylanc.825da50a', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Admin Labels', 99);
+// var ui = document.getElementById('baseLayers');
+// addLayer_primary(L.mapbox.tileLayer('dylanc.849bb91b', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Admin Boundaries', 99);
+// addLayer_primary(L.mapbox.tileLayer('dylanc.825da50a', {accessToken: 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ'}), 'Admin Labels', 99);
 
 //addLayer(popdensity, 'Population Density, 2010', 3);
 //addLayer(housing, 'Households, 2010', 4);
