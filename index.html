@@ -14,8 +14,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
         <!-- Mapbox Css and Js Libraries-->
-        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
-        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
 
         <!--Awesome Fonts Library-->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -33,10 +33,10 @@
 <body>
     <div container>
         <div id="footer" class="text-center center-block site-footer">
-            <a href="https://www.linkedin.com/in/dylancobean" title="Linkedin"><i id="social" class="fa fa-linkedin fa-2x social-fb"></i></a>
+            <a href="https://www.linkedin.com/in/dylanscott22" title="Linkedin"><i id="social" class="fa fa-linkedin fa-2x social-fb"></i></a>
             <a href="https://twitter.com/MrDylanScott" title="Twitter"><i id="social" class="fa fa-twitter fa-2x social-tw"></i></a>
             <a href="https://github.com/dylansc22" title="Github"><i id="social" class="fa fa-github fa-2x social-gp"></i></a>
-            <a href="mailto:dylan.cobean@gmail.com" title="Email"><i id="social" class="fa fa-envelope fa-2x social-em"></i></a>
+            <a href="mailto:hellodylanscott@gmail.com" title="Email"><i id="social" class="fa fa-envelope fa-2x social-em"></i></a>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
         <h2 class="panel-title">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Mitigating Global Sedimentation Risk with Forest Infrastructure</h2>
             <p>
-          <h3>A Webmap by Dylan Scott Cobean</h3>
+          <h3>A Webmap by Dylan Scott</h3>
           </a>
 
       </div>
@@ -118,10 +118,10 @@
       </div>
       <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
         <div class="panel-body">
-          This Webmap is merely a technical demonstration of Dylan Cobean's expertise in geospatal analysis and webmapping. All data is merely draft data and subject to change. This is an ongoing project, initially developed in the Summer of 2015. <br><br>
+          This Webmap is merely a technical demonstration of my expertise in geospatal analysis and webmapping. All data is merely draft data and subject to change. This is an ongoing project, initially developed in the Summer of 2015. <br><br>
 
           Best,<br>
-          Dylan Scott Cobean<br>
+          Dylan Scott<br>
           January 2016<br>
         </div>
       </div>
@@ -221,27 +221,22 @@
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-          <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
-          <script src="https://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
+          <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />      <script src="https://d3js.org/topojson.v1.min.js"></script> <!-- required for using the topojson method/variable/term/thing in my main.js file -->
           <script>// This webmap refers to a div element with the ID: 'mapid'
               L.mapbox.accessToken = 'pk.eyJ1IjoiZHlsYW5jIiwiYSI6Im53UGgtaVEifQ.RJiPqXwEtCLTLl-Vmd1GWQ';
-              var map = L.mapbox.map('mapid', 'dylanc.e2755890', {
-                  zoomControl: false, 
-                  minZoom:2, 
-                  attributionControl: false,
-              })
-                  map.addControl(L.mapbox.geocoderControl('mapbox.places', {
+              var map = L.mapbox.map('mapid', null, {zoomControl: false})
+                .setView([27, -15], 3)
+                .addLayer(L.mapbox.styleLayer('mapbox://styles/dylanc/cjt12jorf0iuc1fqr60bz4rvk'))
+                .addControl(L.mapbox.geocoderControl('mapbox.places', {
                       autocomplete: true,
                       position: 'topright',
                       keepOpen: false,
                   }));
-                  map.setView([27, -15], 3);
-
-                  var custom_zoom = new L.Control.Zoom({ position: 'topright' });
-                      custom_zoom.addTo(map); //zoomcontrol defaults to top left, but that will be covered by the legend, so I moved it to the Topright
+              
+                  new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
                   var custom_attribution = new L.control.attribution({ position: 'bottomright', })
-                          .setPrefix("<b>By Dylan Scott Cobean</b>")
+                          .setPrefix("<b>By Dylan Scott</b>")
                           .addAttribution("Supported by <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox</a>")
                           .addAttribution("<a href='https://www.leaflet.js' target='_blank'>Leaflet</a>")
                           .addAttribution("<a href='https://www.wri.org' target='_blank'>WRI</a>");
